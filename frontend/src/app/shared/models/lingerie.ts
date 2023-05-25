@@ -1,10 +1,10 @@
 export class Lingerie {
   id!: string;
   name!: string;
-  price!: string;
+  price!: number;
   tags?: string[];
   favorite!: boolean;
-  start!: number;
+  stars!: number;
   imageUrl!: string;
   description!: string;
   color!: string;
