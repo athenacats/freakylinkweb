@@ -6,6 +6,11 @@
         <div class="name">
           {{ lingerie.name }}
         </div>
+        <span class="favorite {{ lingerie.favorite ? '' : 'not' }}"> ❤ </span>
+        <div class="stars">
+          <ngb-rating [max]="5" [(rate)]="lingerie.stars" [readonly]="true">
+          </ngb-rating>
+        </div>
       </div>
     </a>
   </li>

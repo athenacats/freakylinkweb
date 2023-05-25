@@ -12,5 +12,9 @@
   "devDependencies": {
     "eslint": "^8.41.0",
     "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5"
   }
 }
