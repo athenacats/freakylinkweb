@@ -8,8 +8,8 @@ import { Lingerie } from 'src/app/shared/models/lingerie';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  lingerie: Lingerie[] = [];
+  lingeries: Lingerie[] = [];
   constructor(private lingerieService: LingerieService) {
-    this.lingerie = lingerieService.getAll();
+    this.lingeries = lingerieService.getAll();
   }
 }

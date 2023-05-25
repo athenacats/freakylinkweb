@@ -1,1 +1,12 @@
-<p>home works!</p>
+<ul>
+  <li *ngFor="let lingerie of lingeries">
+    <a routerLink="/lingerie{{ lingerie.id }}">
+      <img [src]="lingerie.imageUrl" [alt]="lingerie.name" />
+      <div class="content">
+        <div class="name">
+          {{ lingerie.name }}
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
