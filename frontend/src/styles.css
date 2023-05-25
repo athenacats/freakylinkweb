@@ -22,3 +22,12 @@ body {
 a {
   text-decoration: none;
 }
+
+:root {
+  --primary: #6e5d6e;
+  --secondary: #1f1a1f;
+  --links: #ffcdfd;
+  --text: white;
+  --shadow: #0a080a;
+  --tertiary: #ebc7eb;
+}
