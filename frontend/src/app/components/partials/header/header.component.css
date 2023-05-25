@@ -1,16 +1,17 @@
 header {
   position: relative;
-  background: white;
+  background: var(--secondary);
   padding: 0;
-  border-bottom: 1px solid #e72929;
+  border-bottom: 1px solid var(--strong);
+  font-family: "Dancing Script", cursive;
 }
 
 a {
-  color: #af1313;
+  color: var(--links);
 }
 
 a:hover {
-  background: #e72929;
+  background: var(--tertiary);
   color: white;
   cursor: pointer;
 }
@@ -19,26 +20,30 @@ a:hover {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 a.logo {
   font-weight: bold;
+  font-size: 2rem;
   padding: 1rem;
 }
 
 ul {
   display: flex;
   list-style-type: none;
+  align-self: center;
   margin: 0;
 }
 
 ul a {
   padding: 1rem;
   display: inline-block;
+  font-size: 1.2rem;
 }
 a span {
-  background-color: #ff4d4d;
-  color: white;
+  background-color: var(--links);
+  color: var(--secondary);
   padding: 0.1rem 0.45rem;
   border-radius: 100rem;
   font-size: 0.9rem;
@@ -51,7 +56,7 @@ a span {
 .menu {
   position: absolute;
   z-index: 1;
-  background: whitesmoke;
+  background: var(--secondary);
   display: none;
 }
 

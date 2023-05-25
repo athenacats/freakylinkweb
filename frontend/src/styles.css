@@ -17,6 +17,7 @@ button {
 
 body {
   margin: 0;
+  background-color: var(--primary);
 }
 
 a {
@@ -30,4 +31,5 @@ a {
   --text: white;
   --shadow: #0a080a;
   --tertiary: #ebc7eb;
+  --strong: #4d0d4d;
 }
