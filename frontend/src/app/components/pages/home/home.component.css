@@ -1,0 +1,6 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+ngb-rating {
+  font-size: 1rem;
+  color: var(--strong);
+}
