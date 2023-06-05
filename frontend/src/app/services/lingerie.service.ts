@@ -13,8 +13,8 @@ export class LingerieService {
   }
 
   getAllLingerieBySearchTerm(searchTerm: string) {
-    return this.getAll().filter((lingerie) =>
-      lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
+    return this.getAll().filter((Lingerie) =>
+      Lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 }
