@@ -6,8 +6,15 @@ import { sampleLingerie } from 'src/data';
   providedIn: 'root',
 })
 export class LingerieService {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
   getAll(): Lingerie[] {
     return sampleLingerie;
+  }
+
+  getAllLingerieBySearchTerm(searchTerm: string) {
+    return this.getAll().filter((lingerie) =>
+      lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
   }
 }
