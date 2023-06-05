@@ -30,6 +30,8 @@ a {
   --links: #ffcdfd;
   --text: white;
   --shadow: #0a080a;
+  --shadowSaturated: #240624;
   --tertiary: #ebc7eb;
   --strong: #4d0d4d;
+  --brighterColor: rgb(250, 84, 244);
 }

@@ -2,5 +2,91 @@
 
 ngb-rating {
   font-size: 1rem;
-  color: var(--strong);
+  color: var(--brighterColor);
+  margin-bottom: 0.2rem;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  height: 34rem;
+  width: 20rem;
+  border: 1px solid var(--strong);
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: var(--brighterColor);
+  text-decoration: none;
+  background-color: var(--secondary);
+  box-shadow: 10px 8px 16px var(--shadowSaturated);
+}
+
+div.name {
+  text-decoration: none;
+  color: var(--brighterColor);
+  width: 90%;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3rem;
+}
+
+.description span {
+  text-decoration: none;
+  color: var(--links);
+  font-size: 0.8rem;
+  padding: 0 0.2rem;
+}
+
+li a:visted {
+  color: var(--primary);
+}
+
+li a:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+li a img {
+  object-fit: cover;
+  height: 18rem;
+  align-self: center;
+  justify-self: center;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.content {
+  margin-top: 0.3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 100%;
+}
+
+.favorite {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.2rem;
+}
+
+.favorite.not {
+  color: var(--primary);
+}
+
+.price {
+  position: absolute;
+  left: 0.9rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  align-self: baseline;
+  justify-self: flex-end;
+  bottom: 1rem;
 }
