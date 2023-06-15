@@ -1,4 +1,5 @@
 import { Lingerie } from './app/shared/models/lingerie';
+import { Tag } from './app/shared/models/tag';
 
 export const sampleLingerie: Lingerie[] = [
   {
@@ -29,7 +30,7 @@ export const sampleLingerie: Lingerie[] = [
     id: '3',
     name: 'Adaeze Lingerie Set: Sexy Maid Cosplay Costume',
     price: 2300,
-    tags: ['Cosplay', 'Nurse'],
+    tags: ['Cosplay', 'Maid'],
     favorite: true,
     stars: 4.0,
     imageUrl: 'assets/adaeze-1.png',
@@ -65,7 +66,7 @@ export const sampleLingerie: Lingerie[] = [
     id: '6',
     name: 'Amali Lingerie Set: 3 Piece Chiffon Bra, Garter & Thong',
     price: 1850,
-    tags: ['Garter', 'THree-piece'],
+    tags: ['Garter', 'Three-piece'],
     favorite: false,
     stars: 5.0,
     imageUrl: 'assets/Amali_10_11zon.jpg',
@@ -73,4 +74,16 @@ export const sampleLingerie: Lingerie[] = [
       'Amali Lingerie Set: 3 Piece Chiffon Bra, Garter & Thong is a gauzy set with a skirt garter belt. The set has thigh bands and a sexy see through design.',
     color: 'black',
   },
+];
+
+const sampleTags: Tag[] = [
+  { name: 'All', count: 6 },
+  { name: 'Garter', count: 1 },
+  { name: 'Three-piece', count: 1 },
+  { name: 'Cosplay', count: 3 },
+  { name: 'Maid', count: 2 },
+  { name: 'Two-piece', count: 2 },
+  { name: 'Crop Top', count: 1 },
+  { name: 'Bodysuit', count: 1 },
+  { name: 'Teddy', count: 1 },
 ];
