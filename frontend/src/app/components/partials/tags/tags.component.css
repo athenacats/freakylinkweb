@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 0 1rem 0;
+}
+
+a {
+  background-color: var(--shadowSaturated);
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 500;
+  color: var(--links);
+  font-family: "EB Garamond", serif;
+}

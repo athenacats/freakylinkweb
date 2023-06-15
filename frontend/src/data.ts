@@ -42,7 +42,7 @@ export const sampleLingerie: Lingerie[] = [
     id: '4',
     name: 'Adesina Lingerie Set: 2 Piece Chiffon Crop Top and Panties',
     price: 1600,
-    tags: ['Two-piece', 'Crop Top'],
+    tags: ['Two-piece', 'Crop-Top'],
     favorite: true,
     stars: 5.0,
     imageUrl: 'assets/Adesina-1_4_11zon.jpg',
@@ -83,7 +83,7 @@ export const sampleTags: Tag[] = [
   { name: 'Cosplay', count: 3 },
   { name: 'Maid', count: 2 },
   { name: 'Two-piece', count: 2 },
-  { name: 'Crop Top', count: 1 },
+  { name: 'Crop-Top', count: 1 },
   { name: 'Bodysuit', count: 1 },
   { name: 'Teddy', count: 1 },
 ];
