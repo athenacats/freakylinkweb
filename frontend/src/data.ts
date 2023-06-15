@@ -76,7 +76,7 @@ export const sampleLingerie: Lingerie[] = [
   },
 ];
 
-const sampleTags: Tag[] = [
+export const sampleTags: Tag[] = [
   { name: 'All', count: 6 },
   { name: 'Garter', count: 1 },
   { name: 'Three-piece', count: 1 },
