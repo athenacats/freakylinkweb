@@ -1,1 +1,13 @@
-<p>search works!</p>
+<div>
+  <input
+    #s
+    type="text"
+    placeholder="Search Our Catalog"
+    (keyup.enter)="search(s.value)"
+    [value]="searchTerm"
+  />
+  <!-- #s is a template, so we can call it anywhere in our html file. note how we use keyup to have enter work as a button on the keyboard-->
+  <button (click)="search(s.value)">Search</button>
+  <!--We've included js for the onclick here-->
+</div>
+>
