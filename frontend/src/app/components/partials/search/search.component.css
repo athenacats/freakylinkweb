@@ -1,0 +1,41 @@
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  border-radius: 10rem 0 0 10rem;
+  border: none;
+  height: 3rem;
+  width: 20rem;
+  background-color: var(--secondary);
+  padding: 1.2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  outline: none;
+  color: var(--links);
+  font-family: "EB Garamond", serif;
+}
+
+::placeholder {
+  color: var(--primary);
+}
+
+div button {
+  color: var(--links);
+  height: 3rem;
+  width: 5rem;
+  font-size: 1rem;
+  border-radius: 0 10rem 10rem 0;
+  background-color: var(--shadowSaturated);
+  opacity: 0.8;
+  outline: none;
+  border: none;
+}
+
+div button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
