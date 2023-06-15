@@ -19,6 +19,10 @@ export class HomeComponent {
         this.lingeries = this.lingerieService.getAllLingerieBySearchTerm(
           params['searchTerm']
         );
+      else if (params['tag'])
+        this.lingeries = this.lingerieService.getAllLingerieByTag(
+          params['tag']
+        );
       else this.lingeries = lingerieService.getAll();
     });
   }
