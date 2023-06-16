@@ -22,11 +22,11 @@
         {{ lingerie.description }}
       </span>
     </div>
+    <div class="price">
+      <span>
+        {{ lingerie.price | currency : "Sh. " }}
+      </span>
+    </div>
+    <button>Add To Cart</button>
   </div>
-  <div class="price">
-    <span>
-      {{ lingerie.price | currency : "Sh. " }}
-    </span>
-  </div>
-  <button>Add To Cart</button>
 </div>

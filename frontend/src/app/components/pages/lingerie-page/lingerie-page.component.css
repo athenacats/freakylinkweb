@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem;
+}
+
+.container > * {
+  min-width: 25rem;
+  max-width: 40rem;
+}
+
+img {
+  border-radius: 3rem;
+  flex: 1 0;
+  object-fit: cover;
+  height: 35rem;
+  margin: 1rem;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  font-family: "EB Garamond", serif;
+  border-radius: 3rem;
+  border: 1px solid var(--strong);
+  padding: 1rem;
+  background-color: var(--secondary);
+  box-shadow: 10px 8px 16px var(--shadowSaturated);
+  color: var(--brighterColor);
+}
+
+.header {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  color: var(--brighterColor);
+}
+
+.favorite {
+  align-self: center;
+}
+
+.favorite.not {
+  color: var(--primary);
+}
+
+.description span {
+  text-decoration: none;
+  color: var(--links);
+  font-size: 1.1rem;
+  padding: 0 0.2rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 0 0 1rem 0;
+}
+
+a {
+  background-color: var(--brighterColor);
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 500;
+  color: var(--shadowSaturated);
+  font-family: "EB Garamond", serif;
+}
+
+ngb-rating {
+  font-size: 1.1rem;
+  color: var(--brighterColor);
+  margin-bottom: 0.2rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.price::before {
+  content: "Price:";
+  color: var(--brighterColor);
+}
+
+button {
+  background-color: var(--brighterColor);
+  color: var(--shadowSaturated);
+  border: none;
+  border-radius: 10rem;
+
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
