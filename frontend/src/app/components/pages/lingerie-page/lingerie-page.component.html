@@ -1,1 +1,32 @@
-<p>lingerie-page works!</p>
+<div class="container">
+  <img [src]="lingerie.imageUrl" [alt]="lingerie.name" />
+
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ lingerie.name }}
+      </span>
+      <span class="favorite {{ lingerie.favorite ? '' : 'not' }}"> ❤ </span>
+    </div>
+    <div class="rating">
+      <ngb-rating [max]="5" [(rate)]="lingerie.stars" [readonly]="true">
+      </ngb-rating>
+    </div>
+    <div class="tags">
+      <a *ngFor="let tag of lingerie.tags" routerLink="/tag/{{ tag }}">{{
+        tag
+      }}</a>
+    </div>
+    <div class="description">
+      <span>
+        {{ lingerie.description }}
+      </span>
+    </div>
+  </div>
+  <div class="price">
+    <span>
+      {{ lingerie.price | currency : "Sh. " }}
+    </span>
+  </div>
+  <button>Add To Cart</button>
+</div>
