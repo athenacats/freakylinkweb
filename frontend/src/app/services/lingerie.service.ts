@@ -28,4 +28,11 @@ export class LingerieService {
       ? this.getAll()
       : this.getAll().filter((lingerie) => lingerie.tags?.includes(tag));
   }
+
+  getLingerieById(lingerieId: string): Lingerie {
+    return (
+      this.getAll().find((lingerie) => lingerie.id == lingerieId) ??
+      new Lingerie()
+    );
+  }
 }
