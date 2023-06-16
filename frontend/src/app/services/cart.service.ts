@@ -10,6 +10,7 @@ import { CartItem } from '../shared/models/CartItem';
 export class CartService {
   private cart: Cart = this.getCartFromLocalStorage();
   private cartSubject: BehaviorSubject<Cart> = new BehaviorSubject(this.cart);
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
   addToCart(lingerie: Lingerie): void {
