@@ -2,7 +2,7 @@
 <app-tags></app-tags>
 <ul>
   <li *ngFor="let lingerie of lingeries">
-    <a routerLink="/lingerie{{ lingerie.id }}">
+    <a routerLink="/lingerie/{{ lingerie.id }}">
       <img [src]="lingerie.imageUrl" [alt]="lingerie.name" />
       <div class="content">
         <div class="name">
