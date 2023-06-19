@@ -11,6 +11,7 @@ import { TagsComponent } from './components/partials/tags/tags.component';
 import { LingeriePageComponent } from './components/pages/lingerie-page/lingerie-page.component';
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partials/title/title.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TitleComponent } from './components/partials/title/title.component';
     LingeriePageComponent,
     CartPageComponent,
     TitleComponent,
+    NotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
