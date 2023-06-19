@@ -1,5 +1,10 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found
+  [visible]="!lingeries || !lingeries.length"
+  resetLinkText="Reset Search"
+>
+</app-not-found>
 <ul>
   <li *ngFor="let lingerie of lingeries">
     <a routerLink="/lingerie/{{ lingerie.id }}">
