@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
