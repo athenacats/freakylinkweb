@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
 import { LingeriePageComponent } from './components/pages/lingerie-page/lingerie-page.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LingeriePageComponent } from './components/pages/lingerie-page/lingerie
     SearchComponent,
     TagsComponent,
     LingeriePageComponent,
+    CartPageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
