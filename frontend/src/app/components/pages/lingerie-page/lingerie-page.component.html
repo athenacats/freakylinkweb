@@ -1,4 +1,11 @@
-<div class="container">
+<app-not-found
+  [visible]="!lingerie.id"
+  resetLinkText="Back To Homepage"
+  notFoundMessage="Lingerie Not Found"
+>
+</app-not-found>
+
+<div *ngIf="lingerie.id" class="container">
   <img [src]="lingerie.imageUrl" [alt]="lingerie.name" />
 
   <div class="details">
