@@ -5,7 +5,7 @@
   resetLinkText="Go To Homepage"
 ></app-not-found>
 
-<div class="container">
+<div *ngIf="cart && cart.items.length > 0" class="container">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
