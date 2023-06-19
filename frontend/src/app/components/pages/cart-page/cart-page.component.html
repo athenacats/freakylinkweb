@@ -1,4 +1,9 @@
 <app-title title="Cart Page"></app-title>
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Cart Page Is Empty!"
+  resetLinkText="Go To Homepage"
+></app-not-found>
 
 <div class="container">
   <ul>
