@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 0.5rem;
+  gap: 1rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+  justify-content: space-evenly;
+  border: 1px solid var(--strong);
+  border-radius: 1rem;
+  list-style: none;
+  margin: 0.5rem;
+  padding: 0;
+  background-color: var(--shadowSaturated);
+}
+
+ul li {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid var(--shadowSaturated);
+  font-family: "EB Garamond", serif;
+}
+
+ul li:last-child {
+  border: none;
+}
+
+li img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100rem;
+  object-fit: cover;
+}
+
+li div {
+  padding: 1rem;
+}
+
+/*li div:not(:first-child) {
+  flex-basis: 18%;
+}*/
+
+li div:nth-child(2) a {
+  color: var(--brighterColor);
+  font-size: 1.1rem;
+}
+
+li div:nth-child(4) {
+  color: var(--brighterColor);
+  font-size: 1.1rem;
+}
+
+li select {
+  width: 3rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--strong);
+  font-size: 1.1rem;
+  font-weight: 100;
+  background-color: var(--links);
+  color: var(--shadowSaturated);
+  cursor: pointer;
+}
+
+li .removeButton {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+  color: var(--shadowSaturated);
+  background-color: var(--links);
+  outline: none;
+}
+
+li .removeButton:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 15rem;
+  border: 19x solid var(--strong);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-family: "EB Garamond", serif;
+  background-color: var(--tertiary);
+  align-self: center;
+}
+
+.checkout > div {
+  font-size: 1.4rem;
+  margin: 1rem;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.1rem;
+}
+
+.lingerieCount {
+  margin-bottom: 1.5rem;
+}
+
+.lingerieCount::before {
+  content: "Quantity: ";
+  color: var(--strong);
+}
+
+.totalPrice::before {
+  content: "Price: ";
+  color: var(--strong);
+}
+
+.checkout a {
+  padding: 1rem;
+  color: var(--brighterColor);
+  background-color: var(--shadowSaturated);
+  display: block;
+  width: 99%;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 1;
+  justify-self: center;
+  font-size: 1.1rem;
+}
+
+.checkout a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
