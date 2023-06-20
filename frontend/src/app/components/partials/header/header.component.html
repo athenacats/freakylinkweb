@@ -3,7 +3,7 @@
     <a routerLink="/" class="logo">FreakyLink</a>
     <nav>
       <ul>
-        <li>
+        <li *ngIf="!user.token">
           <a routerLink="/login">Login</a>
         </li>
         <li class="menuContainer">
