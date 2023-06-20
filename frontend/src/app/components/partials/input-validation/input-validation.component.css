@@ -1,0 +1,5 @@
+.errorList {
+  color: var(--brighterColor);
+  text-align: center;
+  font-size: 0.95rem;
+}

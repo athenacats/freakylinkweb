@@ -5,10 +5,10 @@
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
       <input-container label="Email">
         <input type="email" placeholder="Email" formControlName="email" />
-        <div class="errorList" *ngIf="fc['email'].errors && isSubmitted">
-          <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
-          <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
-        </div>
+        <input-validation
+          [control]="fc['email']"
+          [showErrorsWhen]="isSubmitted"
+        ></input-validation>
       </input-container>
 
       <div class="inputContainer">
