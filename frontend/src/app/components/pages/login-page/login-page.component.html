@@ -3,13 +3,13 @@
 <div class="container">
   <div class="details">
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <input-container label="Email">
-        <input type="email" placeholder="Email" formControlName="email" />
-        <input-validation
-          [control]="fc['email']"
-          [showErrorsWhen]="isSubmitted"
-        ></input-validation>
-      </input-container>
+      <text-input
+        [control]="fc['email']"
+        [showErrorsWhen]="isSubmitted"
+        type="email"
+        label="Email"
+      >
+      </text-input>
 
       <div class="inputContainer">
         <label>Password</label>

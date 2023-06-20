@@ -1,1 +1,7 @@
-<p>text-input works!</p>
+<input-container [label]="label">
+  <input [type]="type" [placeholder]="label" [formControl]="formControl" />
+  <input-validation
+    [control]="control"
+    [showErrorsWhen]="showErrorsWhen"
+  ></input-validation>
+</input-container>
