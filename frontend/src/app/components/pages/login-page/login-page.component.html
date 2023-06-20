@@ -1,3 +1,4 @@
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
 <div class="container">
   <div class="details">
     <app-title title="Login"></app-title>
@@ -6,6 +7,10 @@
         <label>Email</label>
         <div>
           <input type="email" placeholder="Email" formControlName="email" />
+        </div>
+        <div class="errorList" *ngIf="fc['email'].errors && isSubmitted">
+          <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
+          <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
         </div>
       </div>
       <div class="inputContainer">
@@ -16,6 +21,11 @@
             placeholder="Password"
             formControlName="password"
           />
+        </div>
+        <div class="errorList" *ngIf="fc['password'].errors && isSubmitted">
+          <div *ngIf="fc['password'].errors['required']">
+            Should not be empty
+          </div>
         </div>
       </div>
       <div class="button">
