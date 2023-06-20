@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { sampleLingerie } from "./data";
 
 const app = express();
 app.use(
@@ -10,10 +11,10 @@ app.use(
 );
 
 app.get("/api/lingeries", (req, res) => {
-  res.send("hello,world");
+  res.send(sampleLingerie);
 });
 
 const port = 5000;
 app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
+  console.log("Server is running on http://localhost:" + port);
 });
