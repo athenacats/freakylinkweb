@@ -3,16 +3,14 @@
 <div class="container">
   <div class="details">
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <div class="inputContainer">
-        <label>Email</label>
-        <div>
-          <input type="email" placeholder="Email" formControlName="email" />
-        </div>
+      <input-container label="Email">
+        <input type="email" placeholder="Email" formControlName="email" />
         <div class="errorList" *ngIf="fc['email'].errors && isSubmitted">
           <div *ngIf="fc['email'].errors['required']">Should not be empty</div>
           <div *ngIf="fc['email'].errors['email']">Email is not correct</div>
         </div>
-      </div>
+      </input-container>
+
       <div class="inputContainer">
         <label>Password</label>
         <div>

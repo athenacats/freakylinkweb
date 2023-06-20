@@ -1,1 +1,9 @@
-<p>input-container works!</p>
+<!-- eslint-disable @angular-eslint/template/label-has-associated-control -->
+<div class="container" [ngStyle]="{ 'background-color': bgColor }">
+  <label>
+    {{ label }}
+  </label>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+</div>
