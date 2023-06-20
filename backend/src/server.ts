@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { sampleLingerie } from "./data";
+import { sampleLingerie, sampleTags } from "./data";
 
 const app = express();
 app.use(
@@ -20,6 +20,10 @@ app.get("/api/lingeries/search/:searchTerm", (req, res) => {
     Lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
   res.send(lingeries);
+});
+
+app.get("/api/lingeries/tags", (req, res) => {
+  res.send(sampleTags);
 });
 
 const port = 5000;
