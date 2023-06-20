@@ -14,6 +14,14 @@ app.get("/api/lingeries", (req, res) => {
   res.send(sampleLingerie);
 });
 
+app.get("/api/lingeries/search/:searchTerm", (req, res) => {
+  const searchTerm = req.params.searchTerm;
+  const lingeries = sampleLingerie.filter((Lingerie) =>
+    Lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  res.send(lingeries);
+});
+
 const port = 5000;
 app.listen(port, () => {
   console.log("Server is running on http://localhost:" + port);
