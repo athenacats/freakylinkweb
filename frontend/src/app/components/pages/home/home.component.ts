@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { LingerieService } from 'src/app/services/lingerie.service';
 import { Lingerie } from 'src/app/shared/models/lingerie';
 
@@ -14,16 +15,21 @@ export class HomeComponent {
     private lingerieService: LingerieService,
     activatedRoute: ActivatedRoute
   ) {
+    let lingeriesObservable: Observable<Lingerie[]>;
     activatedRoute.params.subscribe((params) => {
       if (params['searchTerm'])
-        this.lingeries = this.lingerieService.getAllLingerieBySearchTerm(
+        lingeriesObservable = this.lingerieService.getAllLingerieBySearchTerm(
           params['searchTerm']
         );
       else if (params['tag'])
-        this.lingeries = this.lingerieService.getAllLingerieByTag(
+        lingeriesObservable = this.lingerieService.getAllLingerieByTag(
           params['tag']
         );
-      else this.lingeries = lingerieService.getAll();
+      else lingeriesObservable = lingerieService.getAll();
+
+      lingeriesObservable.subscribe((serverLingeries) => {
+        this.lingeries = serverLingeries;
+      });
     });
   }
 }
