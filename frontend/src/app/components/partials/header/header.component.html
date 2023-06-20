@@ -1,3 +1,5 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <header>
   <div class="container">
     <a routerLink="/" class="logo">FreakyLink</a>
@@ -6,12 +8,12 @@
         <li *ngIf="!user.token">
           <a routerLink="/login">Login</a>
         </li>
-        <li class="menuContainer">
+        <li *ngIf="isAuth" class="menuContainer">
           <a routerLink="/dashboard">{{ user.name }}</a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
             <a routerLink="/orders">Orders</a>
-            <a>Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li>
