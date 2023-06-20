@@ -19,7 +19,11 @@ export class LingeriePageComponent {
   ) {
     activatedRoute.params.subscribe((params) => {
       if (params['id'])
-        this.lingerie = lingerieService.getLingerieById(params['id']);
+        lingerieService
+          .getLingerieById(params['id'])
+          .subscribe((serverLingerie) => {
+            this.lingerie = serverLingerie;
+          });
     });
   }
 
