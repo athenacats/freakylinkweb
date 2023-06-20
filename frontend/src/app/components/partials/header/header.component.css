@@ -11,8 +11,12 @@ a {
 
 a:hover {
   background: var(--tertiary);
-  color: white;
+  color: var(--secondary);
   cursor: pointer;
+}
+a:hover span {
+  background-color: var(--secondary);
+  color: var(--links);
 }
 
 .container {
@@ -66,4 +70,9 @@ a span {
 .menu a {
   width: 100%;
   min-width: 8rem;
+  color: var(--links);
+}
+
+.menu a:hover {
+  color: var(--secondary);
 }
