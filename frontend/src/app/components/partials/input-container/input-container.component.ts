@@ -10,5 +10,5 @@ export class InputContainerComponent {
   @Input()
   label!: string;
   @Input()
-  bgColor = 'var(--links)';
+  bgColor = 'var(--shadowSaturated)';
 }

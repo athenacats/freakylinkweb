@@ -9,7 +9,7 @@
 label {
   display: inline-block;
   margin-left: 0.5rem;
-  color: var(--shadowSaturated);
+  color: var(--links);
   font-size: 1rem;
 }
 
