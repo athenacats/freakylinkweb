@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitted = false;
   returnUrl = '';

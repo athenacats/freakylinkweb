@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Lingerie } from '../shared/models/lingerie';
-import { sampleLingerie, sampleTags } from 'src/data';
 import { Tag } from '../shared/models/tag';
 import { HttpClient } from '@angular/common/http';
 import {
