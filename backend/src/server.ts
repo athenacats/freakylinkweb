@@ -42,6 +42,11 @@ app.get("/api/lingeries/:lingerieId", (req, res) => {
   );
   res.send(lingeries);
 });
+
+app.post("/api/users/login", (req, res) => {
+  const body = req.body;
+});
+
 const port = 5000;
 app.listen(port, () => {
   console.log("Server is running on http://localhost:" + port);

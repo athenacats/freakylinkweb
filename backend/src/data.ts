@@ -84,3 +84,20 @@ export const sampleTags: any[] = [
   { name: "Bodysuit", count: 1 },
   { name: "Teddy", count: 1 },
 ];
+
+export const sampleUsers: any[] = [
+  {
+    name: "Thena Mikhail",
+    email: "thenamikhail@gmail.com",
+    password: "12345",
+    address: "Berlin, Germany",
+    isAdmin: true,
+  },
+  {
+    name: "Absalom Thanos",
+    email: "absalomthanos@gmail.com",
+    password: "12345",
+    address: "Kazakhstan",
+    isAdmin: false,
+  },
+];
