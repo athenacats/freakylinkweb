@@ -1,1 +1,26 @@
-<p>login-page works!</p>
+<div class="container">
+  <div class="details">
+    <app-title title="Login"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="inputContainer">
+        <label>Email</label>
+        <div>
+          <input type="email" placeholder="Email" formControlName="email" />
+        </div>
+      </div>
+      <div class="inputContainer">
+        <label>Password</label>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div class="button">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
