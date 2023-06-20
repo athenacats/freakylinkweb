@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class HeaderComponent {
   cartQuantity = 0;
-  constructor(cartService: CartService) {
+  user!: User;
+  constructor(cartService: CartService, userService: UserService) {
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
+    });
+    userService.userObservable.subscribe((newUser) => {
+      this.user = newUser;
     });
   }
 }
