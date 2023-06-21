@@ -19,17 +19,19 @@ router.get(
   })
 );
 
-router.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  const user = sampleUsers.find(
-    (user) => user.email === email && user.password === password
-  );
-  if (user) {
-    res.send(generateTokenResponse(user));
-  } else {
-    res.status(400).send("Username or password is not valid!");
-  }
-});
+router.post(
+  "/login",
+  asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await UserModel.findOne({ email, password });
+    if (user) {
+      res.send(generateTokenResponse(user));
+    } else {
+      const BAD_REQUEST = 400;
+      res.status(BAD_REQUEST).send("Username or password is not valid!");
+    }
+  })
+);
 
 const generateTokenResponse = (user: any) => {
   const token = jwt.sign(
