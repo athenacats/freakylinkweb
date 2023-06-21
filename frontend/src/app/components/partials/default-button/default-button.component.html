@@ -1,1 +1,14 @@
-<p>default-button works!</p>
+<div class="container">
+  <button
+    [ngStyle]="{
+      color: color,
+      'background-color': bgColor,
+      'font-size.rem': fontSizeRem,
+      'width.rem': widthRem
+    }"
+    [type]="type"
+    (click)="clickEvent.emit()"
+  >
+    {{ text }}
+  </button>
+</div>

@@ -1,7 +1,8 @@
+/* eslint-disable @angular-eslint/component-selector */
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-default-button',
+  selector: 'default-button',
   templateUrl: './default-button.component.html',
   styleUrls: ['./default-button.component.css'],
 })
