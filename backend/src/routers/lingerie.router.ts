@@ -18,36 +18,73 @@ router.get(
   })
 );
 
-router.get("/", (req, res) => {
-  res.send(sampleLingerie);
-});
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const lingeries = await LIngerieModel.find();
+    res.send(lingeries);
+  })
+);
 
-router.get("/search/:searchTerm", (req, res) => {
-  const searchTerm = req.params.searchTerm;
-  const lingeries = sampleLingerie.filter((Lingerie) =>
-    Lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  res.send(lingeries);
-});
+router.get(
+  "/search/:searchTerm",
+  asyncHandler(async (req, res) => {
+    const searchRegex = new RegExp(req.params.searchTerm, "i");
 
-router.get("/tags", (req, res) => {
-  res.send(sampleTags);
-});
+    const lingeries = await LIngerieModel.find({
+      name: { $regex: searchRegex },
+    });
 
-router.get("/tag/:tagName", (req, res) => {
-  const tagName = req.params.tagName;
-  const lingeries = sampleLingerie.filter((lingerie) =>
-    lingerie.tags?.includes(tagName)
-  );
-  res.send(lingeries);
-});
+    res.send(lingeries);
+  })
+);
 
-router.get("/:lingerieId", (req, res) => {
-  const lingerieId = req.params.lingerieId;
-  const lingeries = sampleLingerie.find(
-    (lingerie) => lingerie.id == lingerieId
-  );
-  res.send(lingeries);
-});
+router.get(
+  "/tags",
+  asyncHandler(async (req, res) => {
+    const tags = await LIngerieModel.aggregate([
+      {
+        $unwind: "$tags",
+      },
+      {
+        $group: {
+          _id: "$tags",
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          name: "$_id",
+          count: "$count",
+        },
+      },
+    ]).sort({ count: -1 });
+
+    const all = {
+      name: "All",
+      count: await LIngerieModel.countDocuments(),
+    };
+
+    tags.unshift(all);
+    res.send(sampleTags);
+  })
+);
+
+router.get(
+  "/tag/:tagName",
+  asyncHandler(async (req, res) => {
+    const lingeries = await LIngerieModel.find({ tags: req.params.tagName });
+    res.send(lingeries);
+  })
+);
+
+router.get(
+  "/:lingerieId",
+  asyncHandler(async (req, res) => {
+    const lingeries = await LIngerieModel.findById(req.params.lingerieId);
+    res.send(lingeries);
+  })
+);
 
 export default router;
