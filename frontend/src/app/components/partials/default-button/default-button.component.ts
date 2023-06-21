@@ -12,9 +12,9 @@ export class DefaultButtonComponent {
   @Input()
   text = 'Submit';
   @Input()
-  bgColor = 'var(--brighterColor)';
+  bgColor = 'var(--shadowSaturated)';
   @Input()
-  color = 'var(--shadowSaturated)';
+  color = 'var(--brighterColor)';
   @Input()
   fontSizeRem = 1.3;
   @Input()
