@@ -3,6 +3,7 @@ import { sampleUsers } from "../data";
 import jwt from "jsonwebtoken";
 import asyncHandler from "express-async-handler";
 import { UserModel } from "../models/user.model";
+import bcrypt from "bcryptjs";
 
 const router = Router();
 
@@ -19,31 +20,36 @@ router.get(
   })
 );
 
-router.post(
-  "/login",
-  asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
-    const user = await UserModel.findOne({ email, password });
-    if (user) {
-      res.send(generateTokenResponse(user));
-    } else {
-      const BAD_REQUEST = 400;
-      res.status(BAD_REQUEST).send("Username or password is not valid!");
-    }
-  })
-);
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await UserModel.findOne({ email, password });
+
+  if (user) {
+    res.send(generateTokenResponse(user));
+  } else {
+    res.status(400).send("Username or password is not valid!");
+  }
+});
 
 const generateTokenResponse = (user: any) => {
   const token = jwt.sign(
     {
+      id: user.id,
       email: user.email,
       isAdmin: user.isAdmin,
     },
-    "xyz",
+    process.env.JWT_SECRET!,
     { expiresIn: "30d" }
   );
-  user.token = token;
-  return user;
+
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    address: user.address,
+    isAdmin: user.isAdmin,
+    token: token,
+  };
 };
 
 export default router;
