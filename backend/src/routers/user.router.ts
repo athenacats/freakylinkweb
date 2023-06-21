@@ -20,16 +20,30 @@ router.get(
   })
 );
 
-router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-  const user = await UserModel.findOne({ email, password });
+router.post(
+  "/login",
+  asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await UserModel.findOne({ email, password });
 
-  if (user) {
-    res.send(generateTokenResponse(user));
-  } else {
-    res.status(400).send("Username or password is not valid!");
-  }
-});
+    if (user) {
+      res.send(generateTokenResponse(user));
+    } else {
+      res.status(400).send("Username or password is not valid!");
+    }
+  })
+);
+
+router.post(
+  "/register",
+  asyncHandler(async (req, res) => {
+    const { name, email, password, address } = req.body;
+    const user = await UserModel.findOne({ email });
+    if (user) {
+      res.status;
+    }
+  })
+);
 
 const generateTokenResponse = (user: any) => {
   const token = jwt.sign(
