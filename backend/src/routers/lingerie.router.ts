@@ -1,7 +1,22 @@
 import { Router } from "express";
 import { sampleLingerie, sampleTags } from "../data";
+import asyncHandler from "express-async-handler";
+import { LIngerieModel } from "../models/lingerie.model";
 
 const router = Router();
+
+router.get(
+  "/seed",
+  asyncHandler(async (req, res) => {
+    const lingerieCount = await LIngerieModel.countDocuments();
+    if (lingerieCount > 0) {
+      res.send("Seed is already done!");
+      return;
+    }
+    await LIngerieModel.create(sampleLingerie);
+    res.send("Seed is done!");
+  })
+);
 
 router.get("/", (req, res) => {
   res.send(sampleLingerie);
