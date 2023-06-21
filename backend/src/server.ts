@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { sampleLingerie, sampleTags, sampleUsers } from "./data";
 import jwt from "jsonwebtoken";
+import lingerieRouter from "./routers/lingerie.router";
 
 const app = express();
 app.use(express.json());
@@ -12,37 +13,7 @@ app.use(
   })
 );
 
-app.get("/api/lingeries", (req, res) => {
-  res.send(sampleLingerie);
-});
-
-app.get("/api/lingeries/search/:searchTerm", (req, res) => {
-  const searchTerm = req.params.searchTerm;
-  const lingeries = sampleLingerie.filter((Lingerie) =>
-    Lingerie.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  res.send(lingeries);
-});
-
-app.get("/api/lingeries/tags", (req, res) => {
-  res.send(sampleTags);
-});
-
-app.get("/api/lingeries/tag/:tagName", (req, res) => {
-  const tagName = req.params.tagName;
-  const lingeries = sampleLingerie.filter((lingerie) =>
-    lingerie.tags?.includes(tagName)
-  );
-  res.send(lingeries);
-});
-
-app.get("/api/lingeries/:lingerieId", (req, res) => {
-  const lingerieId = req.params.lingerieId;
-  const lingeries = sampleLingerie.find(
-    (lingerie) => lingerie.id == lingerieId
-  );
-  res.send(lingeries);
-});
+app.use("/api/lingeries", lingerieRouter);
 
 app.post("/api/users/login", (req, res) => {
   const { email, password } = req.body;
