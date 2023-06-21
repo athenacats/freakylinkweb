@@ -5,6 +5,8 @@ import express from "express";
 import cors from "cors";
 import lingerieRouter from "./routers/lingerie.router";
 import usersRouter from "./routers/user.router";
+import { dbConnect } from "./configs/database.config";
+dbConnect();
 
 const app = express();
 app.use(express.json());
