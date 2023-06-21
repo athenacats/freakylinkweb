@@ -11,21 +11,14 @@
       >
       </text-input>
 
-      <div class="inputContainer">
-        <label>Password</label>
-        <div>
-          <input
-            type="password"
-            placeholder="Password"
-            formControlName="password"
-          />
-        </div>
-        <div class="errorList" *ngIf="fc['password'].errors && isSubmitted">
-          <div *ngIf="fc['password'].errors['required']">
-            Should not be empty
-          </div>
-        </div>
-      </div>
+      <text-input
+        [control]="fc['password']"
+        [showErrorsWhen]="isSubmitted"
+        type="password"
+        label="Password"
+      >
+      </text-input>
+
       <div class="button">
         <button type="submit">Login</button>
       </div>
