@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  border: 1px solid var(--brightercolor);
+  border-radius: 5px;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+h3 {
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  color: var(--strong);
+  font-family: "Dancing Script", cursive;
+  font-weight: 800;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+td {
+  height: 3rem;
+  font-family: "EB Garamond", serif;
+  color: var(--shadowSaturated);
+}
+
+img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 100rem;
+}
