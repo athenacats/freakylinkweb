@@ -1,7 +1,7 @@
 export interface IUserRegister {
   name: string;
   email: string;
-  passwor: string;
+  password: string;
   confirmPassword: string;
   address: string;
 }
