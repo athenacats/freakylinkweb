@@ -23,4 +23,15 @@
       {{ item.price | currency : "Sh. " }}
     </td>
   </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td>
+      <strong>Total: </strong>
+    </td>
+    <td>
+      <strong>
+        {{ order.totalPrice | currency : "Sh." }}
+      </strong>
+    </td>
+  </tr>
 </table>
