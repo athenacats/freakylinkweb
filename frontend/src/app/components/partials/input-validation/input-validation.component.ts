@@ -8,9 +8,12 @@ import {
 } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const VALIDATORS_MESSAGES: any = {
   required: 'Should not be empty',
   email: 'Email is not valid',
+  minlength: 'Field is too short',
+  notMatch: 'Passwords do not match',
 };
 @Component({
   selector: 'input-validation',
