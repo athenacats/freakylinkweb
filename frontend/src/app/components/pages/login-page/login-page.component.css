@@ -16,3 +16,20 @@ form {
   flex-direction: column;
   justify-content: center;
 }
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--shadowSaturated);
+}
+
+.register a {
+  color: var(--brighterColor);
+  opacity: 1;
+}
+
+.register a:hover {
+  opacity: 0.8;
+}
