@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
+  font-family: "EB Garamond", serif;
+}
+
+.details {
+  width: 28rem;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--shadowSaturated);
+}
+
+.login a {
+  color: var(--brighterColor);
+  opacity: 1;
+}
+
+.login a:hover {
+  opacity: 0.8;
+}
