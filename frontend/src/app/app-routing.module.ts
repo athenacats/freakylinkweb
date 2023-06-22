@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'lingerie/:id', component: LingeriePageComponent },
   { path: 'cart-page', component: CartPageComponent },
   { path: 'login', component: LoginPageComponent },
+  { path: 'register', component: RegisterPageComponent },
 ];
 
 @NgModule({
