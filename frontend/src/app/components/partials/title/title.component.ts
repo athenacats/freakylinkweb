@@ -14,4 +14,7 @@ export class TitleComponent {
 
   @Input()
   fontSize? = '2rem';
+
+  @Input()
+  width? = '20%';
 }
