@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { LatLngTuple, Map, map, tileLayer } from 'leaflet';
 
 @Component({
@@ -7,12 +7,16 @@ import { LatLngTuple, Map, map, tileLayer } from 'leaflet';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css'],
 })
-export class MapComponent {
-  private readonly DEFAULT_LATLNG: LatLngTuple = [1.2921, 36.8219];
+export class MapComponent implements OnInit {
+  private readonly DEFAULT_LATLNG: LatLngTuple = [1.29, 36.82];
   @ViewChild('map', { static: true })
   mapElement!: ElementRef;
 
   map!: Map;
+
+  ngOnInit(): void {
+    this.initializeMap();
+  }
 
   initializeMap() {
     if (this.map) return;
