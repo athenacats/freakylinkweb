@@ -7,3 +7,6 @@ export const LINGERIES_BY_TAG_URL = LINGERIES_URL + '/tag/';
 export const LINGERIES_BY_ID_URL = LINGERIES_URL + '/';
 export const USER_LOGIN_URL = BASE_URL + '/api/users/login';
 export const USER_REGISTER_URL = BASE_URL + '/api/users/register';
+
+export const ORDERS_URL = BASE_URL + '/api/orders';
+export const ORDERS_CREATE_URL = ORDERS_URL + '/create';
