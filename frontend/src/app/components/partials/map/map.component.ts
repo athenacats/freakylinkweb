@@ -8,7 +8,6 @@ import {
   Map,
   Marker,
   icon,
-  latLng,
   map,
   marker,
   tileLayer,
