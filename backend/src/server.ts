@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import lingerieRouter from "./routers/lingerie.router";
 import usersRouter from "./routers/user.router";
+import orderRouter from "./routers/order.router";
 import { dbConnect } from "./configs/database.config";
 dbConnect();
 
@@ -20,6 +21,8 @@ app.use(
 app.use("/api/lingeries", lingerieRouter);
 
 app.use("/api/users", usersRouter);
+
+app.use("/api/orders", orderRouter);
 
 const port = 5000;
 app.listen(port, () => {
