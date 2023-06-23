@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
   LatLng,
   LatLngExpression,
@@ -14,6 +14,7 @@ import {
   tileLayer,
 } from 'leaflet';
 import { LocationService } from 'src/app/services/location.service';
+import { Order } from 'src/app/shared/models/order';
 
 @Component({
   selector: 'map',
@@ -21,6 +22,8 @@ import { LocationService } from 'src/app/services/location.service';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
+  @Input()
+  order!: Order;
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
@@ -62,15 +65,28 @@ export class MapComponent implements OnInit {
     });
   }
 
-  setMarker(latLng: LatLngExpression) {
+  setMarker(latlng: LatLngExpression) {
+    this.addressLatLng = latlng as LatLng;
     if (this.currentMarker) {
-      this.currentMarker.setLatLng(latLng);
+      this.currentMarker.setLatLng(latlng);
       return;
     }
-    this.currentMarker = marker(latLng, {
+    this.currentMarker = marker(latlng, {
       draggable: true,
       autoPan: true,
       icon: this.MARKER_ICON,
     }).addTo(this.map);
+
+    this.currentMarker.on('dragend', () => {
+      this.addressLatLng = this.currentMarker.getLatLng();
+    });
+  }
+
+  set addressLatLng(latlng: LatLng) {
+    // mongodb doesnt accept more than 8 points
+    latlng.lat = parseFloat(latlng.lat.toFixed(8));
+    latlng.lng = parseFloat(latlng.lng.toFixed(8));
+    this.order.addressLatLng = latlng;
+    console.log(this.order.addressLatLng);
   }
 }
