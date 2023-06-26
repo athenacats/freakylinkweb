@@ -34,7 +34,7 @@ export interface Order {
   paymentId: string;
   status: OrderStatus;
   user: Types.ObjectId;
-  createdAt: string;
+  createdAt: Date;
   updatedAt: Date;
 }
 
