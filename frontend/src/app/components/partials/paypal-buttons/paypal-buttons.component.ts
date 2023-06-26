@@ -1,5 +1,8 @@
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/shared/models/order';
 
@@ -14,10 +17,18 @@ declare let paypal: any;
 export class PaypalButtonsComponent implements OnInit {
   @Input()
   order!: Order;
-  constructor(private orderService: OrderService) {}
+
+  @ViewChild('paypal', { static: true })
+  paypalElement!: ElementRef;
+
+  constructor(
+    private orderService: OrderService,
+    private cartService: CartService,
+    private router: Router,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
-    const self = this;
     paypal
       .Buttons({
         createOrder: (data: any, actions: any) => {
@@ -26,7 +37,7 @@ export class PaypalButtonsComponent implements OnInit {
               {
                 amount: {
                   currency_code: 'KES',
-                  value: self.order.totalPrice,
+                  value: this.order.totalPrice,
                 },
               },
             ],
@@ -36,7 +47,7 @@ export class PaypalButtonsComponent implements OnInit {
         onApprove: async (data: any, actions: any) => {
           const payment = await actions.order.capture();
           this.order.paymentId = payment.id;
-          self.orderService.pay(this.order).subscribe({
+          this.orderService.pay(this.order).subscribe({
             next: (orderId) => {
               this.cartService.clearCart();
               this.router.navigateByUrl('/track/' + orderId);

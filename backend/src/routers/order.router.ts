@@ -43,7 +43,7 @@ router.post(
     const { paymentId } = req.body;
     const order = await getNewOrderForCurrentUser(req);
 
-    if (order!) {
+    if (!order) {
       res.status(HTTP_BAD_REQUEST).send("Order Not Found!");
       return;
     }
