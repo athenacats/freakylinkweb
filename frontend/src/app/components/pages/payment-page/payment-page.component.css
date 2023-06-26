@@ -5,11 +5,14 @@
   flex-wrap: wrap;
   justify-content: center;
   font-family: "EB Garamond", serif;
+  width: 100%;
 }
 
 .content {
   width: 45rem;
   margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary > div {
@@ -27,7 +30,6 @@
 
 .summary h3 {
   margin: 0 1rem 0 0;
-  flex-basis: 5rem;
 }
 
 app-title {
@@ -35,12 +37,8 @@ app-title {
   margin: 1rem 0 1rem 0.2rem;
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
 .map {
+  width: 35rem;
   display: flex;
   flex-direction: column;
   align-items: center;

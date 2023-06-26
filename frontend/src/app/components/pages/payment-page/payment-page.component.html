@@ -11,14 +11,13 @@
         <span>{{ order.address }}</span>
       </div>
     </div>
-
     <order-items-list [order]="order"></order-items-list>
   </div>
   <div class="map">
     <app-title
       title="Shipping Address"
       fontSize="1.6rem"
-      width="90%"
+      width="80%"
     ></app-title>
     <map [order]="order" [readonly]="true"></map>
   </div>
