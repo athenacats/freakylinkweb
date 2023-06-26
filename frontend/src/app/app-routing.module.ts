@@ -29,7 +29,7 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'track',
+    path: 'track/:orderId',
     component: OrderTrackPageComponent,
     canActivate: [authGuard],
   },

@@ -25,7 +25,7 @@ export class OrderService {
     return this.http.post<string>(ORDERS_PAY_URL, order);
   }
 
-  trackOrderById(id: number): Observable<Order> {
+  trackOrderById(id: string): Observable<Order> {
     return this.http.get<Order>(ORDERS_TRACK_URL + id);
   }
 }

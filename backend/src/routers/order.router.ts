@@ -53,6 +53,7 @@ router.post(
     await order.save();
 
     res.send(order._id);
+    console.log(paymentId);
   })
 );
 
