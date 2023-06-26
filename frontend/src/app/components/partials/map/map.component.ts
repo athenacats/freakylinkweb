@@ -4,7 +4,6 @@ import {
   ElementRef,
   Input,
   OnChanges,
-  OnInit,
   ViewChild,
 } from '@angular/core';
 import {
