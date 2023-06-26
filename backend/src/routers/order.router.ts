@@ -24,6 +24,7 @@ router.post(
     const newOrder = new OrderModel({ ...requestOrder, user: req.user.id });
     await newOrder.save();
     res.send(newOrder);
+    console.log(newOrder);
   })
 );
 

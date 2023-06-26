@@ -66,12 +66,12 @@ import { AuthInterceptor } from './auth/auth.interceptor';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
+      useClass: AuthInterceptor,
       multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
+      useClass: LoadingInterceptor,
       multi: true,
     },
   ],
