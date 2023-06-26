@@ -29,6 +29,7 @@ import { MapComponent } from './components/partials/map/map.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { PaypalButtonsComponent } from './components/partials/paypal-buttons/paypal-buttons.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PaypalButtonsComponent } from './components/partials/paypal-buttons/pay
     MapComponent,
     PaymentPageComponent,
     PaypalButtonsComponent,
+    OrderTrackPageComponent,
   ],
   imports: [
     BrowserModule,
