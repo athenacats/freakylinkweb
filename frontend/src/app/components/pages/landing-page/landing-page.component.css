@@ -78,3 +78,60 @@ button {
   border: none;
   outline: none;
 }
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.categories {
+  display: flex;
+  padding: 1.5rem 60px;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  gap: 1.5rem;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex: 25%;
+  gap: 32px;
+  padding-bottom: 16px;
+}
+.choose img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+.choose img:hover {
+  opacity: 0.8;
+}
+
+.choose {
+  min-width: 150px;
+  min-height: 150px;
+  aspect-ratio: 1/1;
+}
+
+.link {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--links);
+  font-family: "Dancing Script", cursive;
+  font-size: 24px;
+}
+.link a:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  color: var(--shadowSaturated);
+}
