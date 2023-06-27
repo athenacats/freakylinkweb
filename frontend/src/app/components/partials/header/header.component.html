@@ -2,12 +2,14 @@
 <!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
 <header>
   <div class="container">
-    <img
-      routerLink="/"
-      src="../../../../assets/freaky_link_logo.png"
-      alt="Logo for the Freaky Link"
-    />
-    <a routerLink="/" class="logo">FreakyLink</a>
+    <div class="left">
+      <img
+        routerLink="/"
+        src="../../../../assets/freaky_link_logo.png"
+        alt="Logo for the Freaky Link"
+      />
+      <a routerLink="/" class="logo">The Freaky Link</a>
+    </div>
     <nav>
       <ul>
         <li *ngIf="!user.token">

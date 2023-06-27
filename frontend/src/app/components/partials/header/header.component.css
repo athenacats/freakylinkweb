@@ -3,10 +3,24 @@ header {
   background: var(--secondary);
   padding: 0;
   font-family: "Dancing Script", cursive;
+  height: 7rem;
+  padding-top: 1rem;
+}
+
+img {
+  border-radius: 50%;
+  justify-content: flex-start;
+  width: 5rem;
+}
+
+img:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 a {
   color: var(--links);
+  align-self: center;
 }
 
 a:hover {
@@ -30,6 +44,7 @@ a.logo {
   font-weight: bold;
   font-size: 2rem;
   padding: 1rem;
+  align-self: center;
 }
 
 ul {
@@ -44,6 +59,7 @@ ul a {
   display: inline-block;
   font-size: 1.2rem;
 }
+
 a span {
   background-color: var(--links);
   color: var(--secondary);
