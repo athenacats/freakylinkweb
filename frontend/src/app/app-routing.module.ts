@@ -9,10 +9,13 @@ import { CheckoutPageComponent } from './components/pages/checkout-page/checkout
 import { authGuard } from './auth/guards/auth.guard';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
+import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingPageComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'search/:searchTerm', component: HomeComponent },
+  { path: 'search/:searchTerm', component: LandingPageComponent },
   { path: 'tag/:tag', component: HomeComponent },
   { path: 'lingerie/:id', component: LingeriePageComponent },
   { path: 'cart-page', component: CartPageComponent },
