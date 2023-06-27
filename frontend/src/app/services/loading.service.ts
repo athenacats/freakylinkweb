@@ -1,24 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoadingService {
-  private isLoadingSubject = new BehaviorSubject<boolean>(false);
+  private loading = false;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   constructor() {}
 
-  showLoading() {
-    this.isLoadingSubject.next(true);
+  setLoading(loading: boolean) {
+    this.loading = loading;
   }
 
-  hideLoading() {
-    this.isLoadingSubject.next(false);
-  }
-
-  get isLoading() {
-    return this.isLoadingSubject.asObservable();
+  getLoading(): boolean {
+    return this.loading;
   }
 }

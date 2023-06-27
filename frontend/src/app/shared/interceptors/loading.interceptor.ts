@@ -5,39 +5,30 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpEventType,
 } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, finalize } from 'rxjs';
 import { LoadingService } from 'src/app/services/loading.service';
-
-let pendingRequest = 0;
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
+  private totalRequests = 0;
+
   constructor(private loadingService: LoadingService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    pendingRequest = pendingRequest + 1;
-    this.loadingService.showLoading();
+    console.log('caught');
+    this.totalRequests++;
+    this.loadingService.setLoading(true);
     return next.handle(request).pipe(
-      tap({
-        next: (event) => {
-          if (event.type === HttpEventType.Response) {
-            this.handleHideLoading();
-          }
-        },
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        error: (_) => {
-          this.handleHideLoading();
-        },
+      finalize(() => {
+        this.totalRequests--;
+        if (this.totalRequests < 50) {
+          this.loadingService.setLoading(false);
+        }
       })
     );
-  }
-  handleHideLoading() {
-    pendingRequest = pendingRequest - 1;
-    if (pendingRequest === 0) this.loadingService.hideLoading();
   }
 }

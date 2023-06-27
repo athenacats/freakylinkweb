@@ -1,4 +1,4 @@
-<div class="container" *ngIf="isLoading">
+<div class="container" *ngIf="this.loader.getLoading()">
   <div class="details">
     <svg
       width="24"
@@ -32,6 +32,5 @@
       <circle class="spinner_VpEe spinner_eahp" cx="12" cy="12" r="0" />
       <circle class="spinner_VpEe spinner_f7Y2" cx="12" cy="12" r="0" />
     </svg>
-    <h1>Loading...</h1>
   </div>
 </div>
