@@ -10,6 +10,7 @@ import { authGuard } from './auth/guards/auth.guard';
 import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'track/:orderId',
     component: OrderTrackPageComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
     canActivate: [authGuard],
   },
 ];
