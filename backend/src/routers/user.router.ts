@@ -38,7 +38,7 @@ router.post(
 router.post(
   "/register",
   asyncHandler(async (req, res) => {
-    const { name, email, password, address } = req.body;
+    const { name, email, password, address, phoneNumber } = req.body;
     const user = await UserModel.findOne({ email });
     if (user) {
       res.status(HTTP_BAD_REQUEST).send("User already exists. Please login!");
@@ -52,7 +52,7 @@ router.post(
       email: email.toLowerCase(),
       password: encryptedPassword,
       address,
-      phoneNumber: "",
+      phoneNumber,
       isAdmin: false,
     };
     const dbUser = await UserModel.create(newUser);

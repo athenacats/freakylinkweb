@@ -32,12 +32,12 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const { name, address, email } = this.userService.currentUser;
+    const { name, address, email, phoneNumber } = this.userService.currentUser;
     this.checkoutForm = this.formBuilder.group({
       name: [name, Validators.required],
       address: [address, Validators.required],
       email: [email, Validators.required],
-      phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
+      phoneNumber: [phoneNumber, [Validators.required]],
     });
   }
   get fc() {
@@ -57,9 +57,6 @@ export class CheckoutPageComponent implements OnInit {
       );
       return;
     }
-
-    const phoneNumber = this.checkoutForm.get('phoneNumber')?.value;
-    this.userService.currentUser.phoneNumber = phoneNumber;
 
     this.order.name = this.fc['name'].value;
     this.order.address = this.fc['address'].value;

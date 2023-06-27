@@ -31,6 +31,7 @@ export class RegisterPageComponent implements OnInit {
         password: ['', [Validators.required, Validators.minLength(5)]],
         confirmPassword: ['', [Validators.required]],
         address: ['', [Validators.required, Validators.minLength(5)]],
+        phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
       },
       {
         validator: PasswordMatchValidator('password', 'confirmPassword'),
@@ -54,7 +55,7 @@ export class RegisterPageComponent implements OnInit {
       password: fv.password,
       confirmPassword: fv.confirmPassword,
       address: fv.address,
-      phoneNumber: '',
+      phoneNumber: fv.phoneNumber,
     };
     this.userService.register(user).subscribe((_) => {
       this.router.navigateByUrl(this.returnUrl);

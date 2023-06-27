@@ -14,6 +14,12 @@
         label="Email"
       ></text-input>
       <text-input
+        [control]="fc['phoneNumber']"
+        [showErrorsWhen]="isSubmitted"
+        type="text"
+        label="Phone Number"
+      ></text-input>
+      <text-input
         [control]="fc['password']"
         [showErrorsWhen]="isSubmitted"
         label="Password"
