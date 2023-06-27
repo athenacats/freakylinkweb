@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="content">
+    <app-title title="Profile" fontSize="1.6rem" width="50%"></app-title>
+    <div class="summary">
+      <div>
+        <h3>Name:</h3>
+        <span>{{ currentUser.name }}</span>
+      </div>
+      <div>
+        <h3>Email:</h3>
+        <span>{{ currentUser.email }}</span>
+      </div>
+      <div>
+        <h3>Address:</h3>
+        <span>{{ currentUser.address }}</span>
+      </div>
+    </div>
+  </div>
+</div>
