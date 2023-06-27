@@ -54,6 +54,7 @@ export class RegisterPageComponent implements OnInit {
       password: fv.password,
       confirmPassword: fv.confirmPassword,
       address: fv.address,
+      phoneNumber: '',
     };
     this.userService.register(user).subscribe((_) => {
       this.router.navigateByUrl(this.returnUrl);

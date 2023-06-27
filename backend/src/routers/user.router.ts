@@ -52,6 +52,7 @@ router.post(
       email: email.toLowerCase(),
       password: encryptedPassword,
       address,
+      phoneNumber: "",
       isAdmin: false,
     };
     const dbUser = await UserModel.create(newUser);

@@ -8,6 +8,7 @@ export class Order {
   totalPrice!: number;
   name!: string;
   address!: string;
+  phoneNumber!: string;
   addressLatLng?: LatLng;
   paymentId!: string;
   createdAt!: string;

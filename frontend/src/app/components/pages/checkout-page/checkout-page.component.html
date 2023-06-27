@@ -4,6 +4,10 @@
     <form [formGroup]="checkoutForm">
       <text-input [control]="fc['name']" label="Name"></text-input>
       <text-input [control]="fc['email']" label="Email"></text-input>
+      <text-input
+        [control]="fc['phoneNumber']"
+        label="Phone Number"
+      ></text-input>
       <text-input [control]="fc['address']" label="Address"></text-input>
     </form>
     <order-items-list [order]="order"></order-items-list>

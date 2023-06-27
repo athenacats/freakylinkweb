@@ -6,6 +6,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/order';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-checkout-page',
@@ -14,6 +15,8 @@ import { Order } from 'src/app/shared/models/order';
 })
 export class CheckoutPageComponent implements OnInit {
   order: Order = new Order();
+  user!: User;
+
   checkoutForm!: FormGroup;
   constructor(
     cartService: CartService,
@@ -34,6 +37,7 @@ export class CheckoutPageComponent implements OnInit {
       name: [name, Validators.required],
       address: [address, Validators.required],
       email: [email, Validators.required],
+      phoneNumber: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
   get fc() {
@@ -53,9 +57,14 @@ export class CheckoutPageComponent implements OnInit {
       );
       return;
     }
+
+    const phoneNumber = this.checkoutForm.get('phoneNumber')?.value;
+    this.userService.currentUser.phoneNumber = phoneNumber;
+
     this.order.name = this.fc['name'].value;
     this.order.address = this.fc['address'].value;
     this.order.email = this.fc['email'].value;
+    this.order.phoneNumber = this.fc['phoneNumber'].value;
 
     this.orderService.create(this.order).subscribe({
       next: () => {
