@@ -3,6 +3,7 @@
     <app-title title="Order Form" fontSize="1.6rem" width="50%"></app-title>
     <form [formGroup]="checkoutForm">
       <text-input [control]="fc['name']" label="Name"></text-input>
+      <text-input [control]="fc['email']" label="Email"></text-input>
       <text-input [control]="fc['address']" label="Address"></text-input>
     </form>
     <order-items-list [order]="order"></order-items-list>

@@ -30,6 +30,7 @@ export interface Order {
   totalPrice: number;
   name: string;
   address: string;
+  email: string;
   addressLatLng: LatLng;
   paymentId: string;
   status: OrderStatus;
@@ -42,6 +43,7 @@ const orderSchema = new Schema<Order>(
   {
     name: { type: String, required: true },
     address: { type: String, required: true },
+    email: { type: String, required: true },
     addressLatLng: { type: LatLngSchema, required: true },
     paymentId: { type: String },
     totalPrice: { type: Number, required: true },

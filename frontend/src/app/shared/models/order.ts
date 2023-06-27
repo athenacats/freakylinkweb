@@ -3,6 +3,7 @@ import { CartItem } from './CartItem';
 
 export class Order {
   id!: number;
+  email!: string;
   items!: CartItem[];
   totalPrice!: number;
   name!: string;
