@@ -42,9 +42,10 @@ a:hover span {
 
 a.logo {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.2rem;
   padding: 1rem;
   align-self: center;
+  padding-top: 1.2rem;
 }
 
 ul {
@@ -57,7 +58,7 @@ ul {
 ul a {
   padding: 1rem;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 a span {
@@ -91,4 +92,9 @@ a span {
 
 .menu a:hover {
   color: var(--secondary);
+}
+
+.left {
+  align-items: center;
+  display: flex;
 }
