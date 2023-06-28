@@ -52,7 +52,7 @@ router.post(
       email: email.toLowerCase(),
       password: encryptedPassword,
       address,
-      phoneNumber,
+      phoneNumber: phoneNumber,
       isAdmin: false,
     };
     const dbUser = await UserModel.create(newUser);
@@ -78,6 +78,7 @@ const generateTokenResponse = (user: any) => {
     address: user.address,
     isAdmin: user.isAdmin,
     token: token,
+    phoneNumber: user.phoneNumber,
   };
 };
 
