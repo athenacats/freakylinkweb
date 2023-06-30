@@ -11,6 +11,7 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { OrdersComponent } from './components/pages/orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -40,6 +41,11 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'orders/:userEmail',
+    component: OrdersComponent,
     canActivate: [authGuard],
   },
 ];

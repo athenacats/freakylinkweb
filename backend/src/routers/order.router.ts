@@ -65,10 +65,27 @@ router.get(
   })
 );
 
+router.get(
+  "/orders",
+  asyncHandler(async (req: any, res: any) => {
+    const userEmail = req.query.email;
+    if (!userEmail) {
+      return res.status(HTTP_BAD_REQUEST).send();
+    }
+
+    const orders = await getAllOrderForCurrentUser(userEmail);
+    res.send(orders);
+  })
+);
+
 export default router;
 async function getNewOrderForCurrentUser(req: any) {
   return await OrderModel.findOne({
     user: req.user.id,
     status: OrderStatus.NEW,
   });
+}
+
+async function getAllOrderForCurrentUser(userEmail: string) {
+  return await OrderModel.find({ user: userEmail });
 }

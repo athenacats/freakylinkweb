@@ -11,7 +11,6 @@ import { User } from 'src/app/shared/models/user';
 })
 export class ProfileComponent implements OnInit {
   currentUser!: User;
-  order!: Order;
 
   constructor(private userService: UserService) {}
 
