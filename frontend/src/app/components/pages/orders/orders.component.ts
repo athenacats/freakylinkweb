@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/order';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-orders',
@@ -13,15 +11,22 @@ import { Order } from 'src/app/shared/models/order';
 })
 export class OrdersComponent implements OnInit {
   orders: Order[] = [];
-  constructor(private orderService: OrderService) {}
+  user!: User;
+
+  constructor(
+    private orderService: OrderService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.getUserOrders();
   }
 
   getUserOrders(): void {
+    const id = this.userService.currentUser.id;
     this.orderService
-      .getUserOrders()
+      .getUserOrders(id)
       .subscribe((orders) => (this.orders = orders));
+    console.log(this.orders);
   }
 }

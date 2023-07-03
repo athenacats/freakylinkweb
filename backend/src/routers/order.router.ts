@@ -4,7 +4,7 @@ import { HTTP_BAD_REQUEST } from "../constants/http_status";
 import { OrderModel } from "../models/order.model";
 import { OrderStatus } from "../constants/order_status";
 import auth from "../middlewares/auth.mid";
-import { OrderController } from "../controllers/order.controller";
+//import { OrderController } from "../controllers/order.controller";
 
 const router = Router();
 router.use(auth);
@@ -66,15 +66,14 @@ router.get(
   })
 );
 
-const orderController = new OrderController();
+//const orderController = new OrderController();
 
-router.get("/", orderController.getAllOrders);
+//router.get("/", orderController.getAllOrders);
 
-/*router.get(
-  "/orders",
+router.get(
+  "/",
   asyncHandler(async (req: any, res: any) => {
     const order = await getAllOrderForCurrentUser(req);
-    console.log(order);
 
     if (order.length === 0) {
       res.status(HTTP_BAD_REQUEST).send("Order Not Found!");
@@ -82,9 +81,8 @@ router.get("/", orderController.getAllOrders);
       return;
     }
     res.send({ order });
-    console.log(order);
   })
-);*/
+);
 
 export default router;
 async function getNewOrderForCurrentUser(req: any) {
@@ -94,10 +92,10 @@ async function getNewOrderForCurrentUser(req: any) {
   });
 }
 
-/*async function getAllOrderForCurrentUser(req: any) {
+async function getAllOrderForCurrentUser(req: any) {
   const orders = await OrderModel.find({
     user: req.user.id,
   });
   console.log(orders);
   return orders || [];
-}*/
+}

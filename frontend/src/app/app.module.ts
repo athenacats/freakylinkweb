@@ -33,6 +33,7 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
+import { OrderService } from './services/order.service';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { OrdersComponent } from './components/pages/orders/orders.component';
     }),
   ],
   providers: [
+    { provide: OrderService },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

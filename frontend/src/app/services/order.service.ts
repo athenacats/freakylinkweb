@@ -8,7 +8,7 @@ import {
   ORDERS_TRACK_URL,
   ORDERS_URL,
 } from '../shared/constants/urls';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +30,10 @@ export class OrderService {
     return this.http.get<Order>(ORDERS_TRACK_URL + id);
   }
 
-  getUserOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(ORDERS_URL);
+  getUserOrders(id: string): Observable<Order[]> {
+    console.log(Order, id);
+    return this.http
+      .get<Order[]>(ORDERS_URL)
+      .pipe(tap((data) => console.log('Response from API:', data)));
   }
 }
