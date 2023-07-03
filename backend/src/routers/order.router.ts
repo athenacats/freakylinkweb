@@ -68,13 +68,16 @@ router.get(
 router.get(
   "/orders",
   asyncHandler(async (req: any, res: any) => {
-    const userEmail = req.query.email;
-    if (!userEmail) {
-      return res.status(HTTP_BAD_REQUEST).send();
-    }
+    const order = await getAllOrderForCurrentUser(req);
+    console.log(order);
 
-    const orders = await getAllOrderForCurrentUser(userEmail);
-    res.send(orders);
+    if (order.length === 0) {
+      res.status(HTTP_BAD_REQUEST).send("Order Not Found!");
+      console.error("Failed to retrieve user orders:");
+      return;
+    }
+    res.send({ order });
+    console.log(order);
   })
 );
 
@@ -86,6 +89,10 @@ async function getNewOrderForCurrentUser(req: any) {
   });
 }
 
-async function getAllOrderForCurrentUser(userEmail: string) {
-  return await OrderModel.find({ user: userEmail });
+async function getAllOrderForCurrentUser(req: any) {
+  const orders = await OrderModel.find({
+    user: req.user.id,
+  });
+  console.log(orders);
+  return orders || [];
 }

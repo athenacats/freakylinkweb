@@ -1,18 +1,13 @@
 <div class="container">
   <div class="content">
     <app-title title="Orders" fontSize="1.6rem"></app-title>
-    <div class="summary">
-      <ul>
-        <li *ngFor="let order of orders">
-          <a
-            [routerLink]="['/orders']"
-            [queryParams]="{ email: currentUser.email }"
-            >View Orders</a
-          >
-          <!-- Display order details -->
-          {{ order.id }} - {{ order.name }} - {{ order.totalPrice }}
+    <!--<div class="summary">
+      <ul *ngIf="order">
+        <li *ngFor="let ord of order">-->
+    <!-- Display order details -->
+    <!-- {{ ord.id }} - {{ ord.name }} - {{ ord.totalPrice }}
         </li>
       </ul>
-    </div>
+    </div>-->
   </div>
 </div>

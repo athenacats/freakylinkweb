@@ -44,7 +44,7 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'orders/:userEmail',
+    path: 'orders',
     component: OrdersComponent,
     canActivate: [authGuard],
   },

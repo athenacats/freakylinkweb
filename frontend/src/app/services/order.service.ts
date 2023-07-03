@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../shared/models/order';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {
   ORDERS_CREATE_URL,
   ORDERS_NEW_FOR_CURRENT_USER,
@@ -30,8 +30,7 @@ export class OrderService {
     return this.http.get<Order>(ORDERS_TRACK_URL + id);
   }
 
-  getUserOrders(email: string): Observable<Order[]> {
-    const params = new HttpParams().set('email', email);
-    return this.http.get<Order[]>(ORDERS_URL, { params });
+  getUserOrders(userId: string): Observable<Order[]> {
+    return this.http.get<Order[]>(`/api/orders/user/${userId}`);
   }
 }

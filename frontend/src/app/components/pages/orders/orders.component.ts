@@ -1,40 +1,51 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Observable } from 'rxjs';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/order';
-import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css'],
 })
-export class OrdersComponent {
-  orders: Order[] = [];
-  currentUser!: User;
-
+export class OrdersComponent implements OnInit {
+  order: Observable<Order> | undefined;
   constructor(
-    orderService: OrderService,
+    private http: HttpClient,
     private userService: UserService,
+    private orderService: OrderService,
     private route: ActivatedRoute
-  ) {
-    this.currentUser = this.userService.currentUser;
-    const userEmail = this.currentUser.email;
-    console.log(userEmail);
+  ) {}
 
-    this.route.queryParams.subscribe((params) => {
-      const email = params['email'];
-      orderService.getUserOrders(email).subscribe({
-        next: (orders) => {
-          console.log(orders);
-          this.orders = orders;
-        },
-        error: (error) => {
-          console.log('Error fetching user orders:', error);
-        },
-      });
-    });
+  ngOnInit() {
+    console.log(this.route.snapshot.params);
+    console.log(this.userService.currentUser);
+    this.order = this.orderService.getUserOrders();
+    console.log(this.order);
+    this.order.subscribe(
+      (orders) => {
+        console.log(orders); // Log the actual data emitted by the Observable
+        // Here you can further process the orders or assign them to a component property
+      },
+      (error) => {
+        console.log('Error:', error);
+      }
+    );
+
+    this.getAllOrders();
+  }
+
+  getAllOrders() {
+    this.orderService.getUserOrders().subscribe(
+      (orders) => {
+        console.log(orders);
+      },
+      () => {
+        console.log('error');
+      }
+    );
   }
 }
