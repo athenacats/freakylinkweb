@@ -30,7 +30,7 @@ export class OrderService {
     return this.http.get<Order>(ORDERS_TRACK_URL + id);
   }
 
-  getUserOrders(userId: string): Observable<Order[]> {
-    return this.http.get<Order[]>(`/api/orders/user/${userId}`);
+  getUserOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(ORDERS_URL);
   }
 }

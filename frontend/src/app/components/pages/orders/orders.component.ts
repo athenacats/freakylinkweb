@@ -12,40 +12,16 @@ import { Order } from 'src/app/shared/models/order';
   styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-  order: Observable<Order> | undefined;
-  constructor(
-    private http: HttpClient,
-    private userService: UserService,
-    private orderService: OrderService,
-    private route: ActivatedRoute
-  ) {}
+  orders: Order[] = [];
+  constructor(private orderService: OrderService) {}
 
-  ngOnInit() {
-    console.log(this.route.snapshot.params);
-    console.log(this.userService.currentUser);
-    this.order = this.orderService.getUserOrders();
-    console.log(this.order);
-    this.order.subscribe(
-      (orders) => {
-        console.log(orders); // Log the actual data emitted by the Observable
-        // Here you can further process the orders or assign them to a component property
-      },
-      (error) => {
-        console.log('Error:', error);
-      }
-    );
-
-    this.getAllOrders();
+  ngOnInit(): void {
+    this.getUserOrders();
   }
 
-  getAllOrders() {
-    this.orderService.getUserOrders().subscribe(
-      (orders) => {
-        console.log(orders);
-      },
-      () => {
-        console.log('error');
-      }
-    );
+  getUserOrders(): void {
+    this.orderService
+      .getUserOrders()
+      .subscribe((orders) => (this.orders = orders));
   }
 }

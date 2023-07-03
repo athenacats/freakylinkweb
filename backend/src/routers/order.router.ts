@@ -4,6 +4,7 @@ import { HTTP_BAD_REQUEST } from "../constants/http_status";
 import { OrderModel } from "../models/order.model";
 import { OrderStatus } from "../constants/order_status";
 import auth from "../middlewares/auth.mid";
+import { OrderController } from "../controllers/order.controller";
 
 const router = Router();
 router.use(auth);
@@ -65,7 +66,11 @@ router.get(
   })
 );
 
-router.get(
+const orderController = new OrderController();
+
+router.get("/", orderController.getAllOrders);
+
+/*router.get(
   "/orders",
   asyncHandler(async (req: any, res: any) => {
     const order = await getAllOrderForCurrentUser(req);
@@ -79,7 +84,7 @@ router.get(
     res.send({ order });
     console.log(order);
   })
-);
+);*/
 
 export default router;
 async function getNewOrderForCurrentUser(req: any) {
@@ -89,10 +94,10 @@ async function getNewOrderForCurrentUser(req: any) {
   });
 }
 
-async function getAllOrderForCurrentUser(req: any) {
+/*async function getAllOrderForCurrentUser(req: any) {
   const orders = await OrderModel.find({
     user: req.user.id,
   });
   console.log(orders);
   return orders || [];
-}
+}*/
