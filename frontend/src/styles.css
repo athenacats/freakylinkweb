@@ -16,6 +16,7 @@ html,
 body {
   max-width: 100%;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 html,
