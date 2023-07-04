@@ -2,13 +2,14 @@
   <div class="content">
     <app-title title="Orders" fontSize="1.6rem"></app-title>
     <div class="summary">
-      <ul *ngIf="orders && orders.length > 0">
+      <ul *ngIf="orders">
         <li *ngFor="let order of orders">
           <!-- Display order details -->
-          {{ order.id }} - {{ order.name }} - {{ order.totalPrice }}
+          {{ order.paymentId }}
         </li>
       </ul>
-      <p *ngIf="!orders || orders.length === 0">No orders available.</p>
+      <p *ngIf="orders && orders.length === 0">No orders available.</p>
+      <p *ngIf="!orders">Loading orders...</p>
     </div>
   </div>
 </div>

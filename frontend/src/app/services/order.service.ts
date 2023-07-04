@@ -32,8 +32,6 @@ export class OrderService {
 
   getUserOrders(id: string): Observable<Order[]> {
     console.log(Order, id);
-    return this.http
-      .get<Order[]>(ORDERS_URL)
-      .pipe(tap((data) => console.log('Response from API:', data)));
+    return this.http.get<Order[]>(ORDERS_URL);
   }
 }

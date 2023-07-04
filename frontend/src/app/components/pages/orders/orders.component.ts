@@ -10,7 +10,7 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./orders.component.css'],
 })
 export class OrdersComponent implements OnInit {
-  orders: Order[] = [];
+  orders: Order[] | null = null;
   user!: User;
 
   constructor(
@@ -22,11 +22,16 @@ export class OrdersComponent implements OnInit {
     this.getUserOrders();
   }
 
-  getUserOrders(): void {
+  public getUserOrders() {
     const id = this.userService.currentUser.id;
-    this.orderService
-      .getUserOrders(id)
-      .subscribe((orders) => (this.orders = orders));
-    console.log(this.orders);
+    this.orderService.getUserOrders(id).subscribe(
+      (response: any) => {
+        this.orders = response.order || [];
+        console.log(this.orders);
+      },
+      (error) => {
+        console.error('Failed to retrieve user orders:', error);
+      }
+    );
   }
 }
