@@ -7,30 +7,13 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class CurrencyService {
-  private accessKey = '319e0311df7dfca96e83def2bb174317';
-  private apiUrl = 'http://api.exchangeratesapi.io/latest';
-
   constructor() {}
 
-  async convertCurrency(
-    amount: number,
-    fromCurrency: string,
-    toCurrency: string
-  ): Promise<number> {
-    const url = `${this.apiUrl}?access_key=${this.accessKey}&base=${fromCurrency}&symbols=${toCurrency}`;
-
+  async convertCurrency(amount: number): Promise<number> {
     try {
-      const response = await axios.get(url);
-      const rate = response.data.rates?.[toCurrency]; // Add error handling
-      console.log(response.data);
-      if (rate !== undefined) {
-        return amount * rate * 0.0065;
-      } else {
-        throw new Error(`Conversion rate for ${toCurrency} not found.`);
-      }
-    } catch (error) {
-      console.error('Failed to convert currency:', error);
-      throw error;
+      return amount * 0.0071;
+    } catch {
+      throw new Error('Something went wrong');
     }
   }
 }

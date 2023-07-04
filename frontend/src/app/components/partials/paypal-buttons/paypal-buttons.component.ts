@@ -38,9 +38,7 @@ export class PaypalButtonsComponent implements OnInit {
       .Buttons({
         createOrder: async (data: any, actions: any) => {
           const convertedPrice = await this.currencyService.convertCurrency(
-            this.order.totalPrice,
-            'EUR',
-            'USD'
+            this.order.totalPrice
           );
           console.log(convertedPrice);
           return actions.order.create({
