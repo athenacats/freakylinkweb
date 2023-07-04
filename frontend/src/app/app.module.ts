@@ -34,6 +34,7 @@ import { LandingPageComponent } from './components/pages/landing-page/landing-pa
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 import { OrderService } from './services/order.service';
+import { CurrencyService } from './services/currency.service';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { OrderService } from './services/order.service';
   ],
   providers: [
     { provide: OrderService },
+    { provide: CurrencyService },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
