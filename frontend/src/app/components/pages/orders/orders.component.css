@@ -40,7 +40,7 @@ td {
 }
 
 th:last-child,
-td:last-child {
+.last {
   border-right: none;
 }
 

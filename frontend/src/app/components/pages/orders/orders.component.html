@@ -16,19 +16,29 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let order of orders">
-            <td>{{ order.paymentId }}</td>
-            <td>{{ order.createdAt | date : "yyyy-MM-dd" }}</td>
-            <ng-container *ngFor="let item of order.items">
-              <td class="name">{{ item.lingerie.name }}</td>
+          <ng-container *ngFor="let order of orders">
+            <tr *ngFor="let item of order.items; let firstItem = first">
+              <td *ngIf="firstItem" [attr.rowspan]="order.items.length">
+                {{ order.paymentId }}
+              </td>
+              <td *ngIf="firstItem" [attr.rowspan]="order.items.length">
+                {{ order.createdAt | date : "yyyy-MM-dd" }}
+              </td>
+              <td>{{ item.lingerie.name }}</td>
               <td>{{ item.price }}</td>
               <td>{{ item.quantity }}</td>
-              <td [attr.rowspan]="order.items.length">
+              <td *ngIf="firstItem" [attr.rowspan]="order.items.length">
                 {{ order.totalPrice }}
               </td>
-              <td [attr.rowspan]="order.items.length">{{ order.status }}</td>
-            </ng-container>
-          </tr>
+              <td
+                class="last"
+                *ngIf="firstItem"
+                [attr.rowspan]="order.items.length"
+              >
+                {{ order.status }}
+              </td>
+            </tr>
+          </ng-container>
         </tbody>
       </table>
       <p *ngIf="orders && orders.length === 0">No orders available.</p>
