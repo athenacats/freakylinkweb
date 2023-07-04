@@ -3,18 +3,15 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 35rem;
-  margin-right: 1rem;
-}
-
-.details {
-  margin-bottom: 1rem;
+  max-width: 45rem;
+  gap: 1.5rem;
 }
 
 h1 {
@@ -27,6 +24,10 @@ h1 {
   font-family: "EB Garamond", serif;
   margin: 1rem;
   font-size: 1.1rem;
+}
+
+.details > div:last-child {
+  margin-bottom: 0;
 }
 
 .details strong {
