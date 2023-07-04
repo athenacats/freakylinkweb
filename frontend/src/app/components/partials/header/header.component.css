@@ -1,20 +1,22 @@
 header {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--secondary);
   padding: 0;
   font-family: "Dancing Script", cursive;
-  height: 7rem;
-  padding-top: 1rem;
+  height: 6rem;
 }
 
 img {
   border-radius: 50%;
   justify-content: flex-start;
-  width: 5rem;
+  width: 4.5rem;
 }
 
 img:hover {
-  opacity: 0.8;
+  opacity: 0.7;
   cursor: pointer;
 }
 
@@ -28,16 +30,20 @@ a:hover {
   color: var(--secondary);
   cursor: pointer;
 }
+
 a:hover span {
   background-color: var(--secondary);
   color: var(--links);
 }
 
 .container {
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 a.logo {
@@ -45,7 +51,6 @@ a.logo {
   font-size: 2.2rem;
   padding: 1rem;
   align-self: center;
-  padding-top: 1.2rem;
 }
 
 ul {
@@ -97,4 +102,5 @@ a span {
 .left {
   align-items: center;
   display: flex;
+  width: 60%;
 }
