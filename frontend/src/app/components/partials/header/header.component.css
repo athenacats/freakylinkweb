@@ -64,6 +64,9 @@ ul a {
   padding: 1rem;
   display: inline-block;
   font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
 }
 
 a span {
@@ -91,7 +94,7 @@ a span {
 
 .menu a {
   width: 100%;
-  min-width: 8rem;
+
   color: var(--links);
 }
 
@@ -99,8 +102,63 @@ a span {
   color: var(--secondary);
 }
 
+.cart {
+  align-self: center;
+}
+
 .left {
   align-items: center;
   display: flex;
   width: 60%;
+}
+
+@media screen and (max-width: 770px) {
+  img {
+    width: 4rem;
+  }
+  a.logo {
+    font-size: 1.5rem;
+  }
+  ul a {
+    font-size: 1.3rem;
+  }
+  span {
+    font-size: 0.7rem;
+  }
+  .cart {
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header {
+    height: 4.5rem;
+  }
+  img {
+    width: 3rem;
+  }
+  a.logo {
+    font-size: 1.1rem;
+  }
+  ul a {
+    font-size: 0.9rem;
+  }
+  span {
+    font-size: 0.7rem;
+  }
+  .cart {
+    align-items: center;
+    align-self: center;
+    align-content: center;
+  }
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
