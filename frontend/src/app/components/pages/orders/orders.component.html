@@ -2,12 +2,43 @@
   <div class="content">
     <app-title title="Orders" fontSize="1.6rem"></app-title>
     <div class="summary">
-      <ul *ngIf="orders">
-        <li *ngFor="let order of orders">
-          <!-- Display order details -->
-          {{ order.paymentId }}
-        </li>
-      </ul>
+      <table *ngIf="orders">
+        <thead>
+          <tr>
+            <th>Payment ID</th>
+            <th>Date</th>
+            <th>Items</th>
+            <th>Total Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{ order.paymentId }}</td>
+            <td>{{ order.createdAt }}</td>
+            <td>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of order.items">
+                    <td>{{ item.lingerie.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>{{ order.totalPrice }}</td>
+            <td>{{ order.status }}</td>
+          </tr>
+        </tbody>
+      </table>
       <p *ngIf="orders && orders.length === 0">No orders available.</p>
       <p *ngIf="!orders">Loading orders...</p>
     </div>
