@@ -25,6 +25,30 @@ app.use("/api/users", usersRouter);
 
 app.use("/api/orders", orderRouter);
 
+/*app.get(
+  "/api/convert",
+  asyncHandler(async (req, res) => {
+    const { amount, from, to, access_key } = req.query as {
+      amount: string;
+      from: string;
+      to: string;
+      access_key: string;
+    };
+    const apiUrl = `http://api.exchangeratesapi.io/v1/latest?access_key=${access_key}&base=${from}&symbols=${to}`;
+
+    try {
+      const response = await axios.get(apiUrl);
+      const conversionRate = response.data.rates[to];
+      const convertedAmount = parseFloat(amount) * conversionRate;
+      console.log(convertedAmount);
+      res.json({ result: convertedAmount });
+    } catch (error) {
+      console.error("Error while proxying request:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  })
+); would use it if i paid for base currency kes access*/
+
 const port = 5000;
 app.listen(port, () => {
   console.log("Server is running on http://localhost:" + port);
