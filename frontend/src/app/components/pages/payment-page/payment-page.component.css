@@ -1,18 +1,18 @@
 .container {
   margin-top: 1rem;
   display: flex;
-  margin: 0 2rem 6rem 2rem;
   flex-wrap: wrap;
   justify-content: center;
   font-family: "EB Garamond", serif;
-  width: 100%;
+  width: 100vw;
 }
 
 .content {
   width: 45rem;
-  margin-right: 3rem;
+
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .summary > div {
@@ -20,6 +20,7 @@
   margin-top: 0.7rem;
   align-items: flex-end;
   color: var(--shadowSaturated);
+  border-bottom: 1px solid var(--strong);
 }
 
 .summary span {
@@ -30,6 +31,7 @@
 
 .summary h3 {
   margin: 0 1rem 0 0;
+  font-size: 1.5rem;
 }
 
 app-title {
