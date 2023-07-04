@@ -39,7 +39,8 @@ app.get(
     try {
       const response = await axios.get(apiUrl);
       const conversionRate = response.data.rates[to];
-      const convertedAmount = parseFloat(amount) * conversionRate;
+      const convertedAmount = parseFloat(amount) * conversionRate * 0.0065;
+      console.log(convertedAmount);
       res.json({ result: convertedAmount });
     } catch (error) {
       console.error("Error while proxying request:", error);

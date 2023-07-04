@@ -24,7 +24,7 @@ export class CurrencyService {
       const rate = response.data.rates?.[toCurrency]; // Add error handling
       console.log(response.data);
       if (rate !== undefined) {
-        return amount * rate;
+        return amount * rate * 0.0065;
       } else {
         throw new Error(`Conversion rate for ${toCurrency} not found.`);
       }
