@@ -3,39 +3,31 @@
     <app-title title="Orders" fontSize="1.6rem"></app-title>
     <div class="summary">
       <table *ngIf="orders">
-        <thead>
+        <thead class="main">
           <tr>
             <th>Payment ID</th>
             <th>Date</th>
-            <th>Items</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
             <th>Total Price</th>
             <th>Status</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let order of orders">
             <td>{{ order.paymentId }}</td>
-            <td>{{ order.createdAt }}</td>
-            <td>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of order.items">
-                    <td>{{ item.lingerie.name }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.quantity }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td>{{ order.totalPrice }}</td>
-            <td>{{ order.status }}</td>
+            <td>{{ order.createdAt | date : "yyyy-MM-dd" }}</td>
+            <ng-container *ngFor="let item of order.items">
+              <td class="name">{{ item.lingerie.name }}</td>
+              <td>{{ item.price }}</td>
+              <td>{{ item.quantity }}</td>
+              <td [attr.rowspan]="order.items.length">
+                {{ order.totalPrice }}
+              </td>
+              <td [attr.rowspan]="order.items.length">{{ order.status }}</td>
+            </ng-container>
           </tr>
         </tbody>
       </table>

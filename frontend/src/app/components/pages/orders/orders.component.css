@@ -1,0 +1,54 @@
+.container {
+  height: 100%;
+  margin-top: 1rem;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.summary {
+  width: 100%;
+}
+
+table {
+  background-color: var(--strong);
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead.main {
+  color: var(--brighterColor);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  background-color: var(--shadowSaturated);
+}
+
+tbody {
+  font-family: "EB Garamond", serif;
+  color: var(--links);
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--tertiary);
+  padding: 0.5rem;
+  text-align: center;
+  border-right: 1px solid var(--tertiary);
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+.name {
+  text-align: left;
+}
+
+p {
+  font-family: "EB Garamond", serif;
+  color: var(--shadowSaturated);
+}
