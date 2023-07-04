@@ -1,19 +1,19 @@
 import { Router } from "express";
 import { sampleLingerie, sampleTags } from "../data";
 import asyncHandler from "express-async-handler";
-import { LIngerieModel } from "../models/lingerie.model";
+import { LingerieModel } from "../models/lingerie.model";
 
 const router = Router();
 
 router.get(
   "/seed",
   asyncHandler(async (req, res) => {
-    const lingerieCount = await LIngerieModel.countDocuments();
+    const lingerieCount = await LingerieModel.countDocuments();
     if (lingerieCount > 0) {
       res.send("Seed is already done!");
       return;
     }
-    await LIngerieModel.create(sampleLingerie);
+    await LingerieModel.create(sampleLingerie);
     res.send("Seed is done!");
   })
 );
@@ -21,7 +21,7 @@ router.get(
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const lingeries = await LIngerieModel.find();
+    const lingeries = await LingerieModel.find();
     res.send(lingeries);
   })
 );
@@ -31,7 +31,7 @@ router.get(
   asyncHandler(async (req, res) => {
     const searchRegex = new RegExp(req.params.searchTerm, "i");
 
-    const lingeries = await LIngerieModel.find({
+    const lingeries = await LingerieModel.find({
       name: { $regex: searchRegex },
     });
 
@@ -42,7 +42,7 @@ router.get(
 router.get(
   "/tags",
   asyncHandler(async (req, res) => {
-    const tags = await LIngerieModel.aggregate([
+    const tags = await LingerieModel.aggregate([
       {
         $unwind: "$tags",
       },
@@ -63,7 +63,7 @@ router.get(
 
     const all = {
       name: "All",
-      count: await LIngerieModel.countDocuments(),
+      count: await LingerieModel.countDocuments(),
     };
 
     tags.unshift(all);
@@ -74,7 +74,7 @@ router.get(
 router.get(
   "/tag/:tagName",
   asyncHandler(async (req, res) => {
-    const lingeries = await LIngerieModel.find({ tags: req.params.tagName });
+    const lingeries = await LingerieModel.find({ tags: req.params.tagName });
     res.send(lingeries);
   })
 );
@@ -82,7 +82,7 @@ router.get(
 router.get(
   "/:lingerieId",
   asyncHandler(async (req, res) => {
-    const lingeries = await LIngerieModel.findById(req.params.lingerieId);
+    const lingeries = await LingerieModel.findById(req.params.lingerieId);
     res.send(lingeries);
   })
 );

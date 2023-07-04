@@ -20,6 +20,7 @@ export const LingerieSchema = new Schema<Lingerie>(
     favorite: { type: Boolean, default: false },
     stars: { type: Number, required: true },
     imageUrl: { type: String, required: true },
+    description: { type: String, required: true },
     color: { type: String, required: true },
   },
   {
@@ -33,4 +34,4 @@ export const LingerieSchema = new Schema<Lingerie>(
   }
 );
 
-export const LIngerieModel = model<Lingerie>("lingerie", LingerieSchema);
+export const LingerieModel = model<Lingerie>("lingerie", LingerieSchema);

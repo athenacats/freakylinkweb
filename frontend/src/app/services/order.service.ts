@@ -8,7 +8,7 @@ import {
   ORDERS_TRACK_URL,
   ORDERS_URL,
 } from '../shared/constants/urls';
-import { Observable, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
