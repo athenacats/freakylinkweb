@@ -4,7 +4,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
+import { async } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
+import { CurrencyService } from 'src/app/services/currency.service';
 import { OrderService } from 'src/app/services/order.service';
 import { Order } from 'src/app/shared/models/order';
 
@@ -27,19 +29,26 @@ export class PaypalButtonsComponent implements OnInit {
     private orderService: OrderService,
     private cartService: CartService,
     private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private currencyService: CurrencyService
   ) {}
 
   ngOnInit(): void {
     paypal
       .Buttons({
-        createOrder: (data: any, actions: any) => {
+        createOrder: async (data: any, actions: any) => {
+          const convertedPrice = await this.currencyService.convertCurrency(
+            this.order.totalPrice,
+            'EUR',
+            'USD'
+          );
+          console.log(convertedPrice);
           return actions.order.create({
             purchase_units: [
               {
                 amount: {
                   currency_code: 'USD',
-                  value: this.order.totalPrice.toFixed(2),
+                  value: convertedPrice.toFixed(2),
                 },
               },
             ],
