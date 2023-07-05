@@ -68,7 +68,12 @@ export class UserService {
   }
 
   updateUser(user: User): Observable<User> {
-    return this.http.put<User>(USER_UPDATE + user.id, user);
+    return this.http.put<User>(USER_UPDATE + user.id, user).pipe(
+      tap((updatedUser) => {
+        this.setUserToLocalStorage(updatedUser);
+        this.userSubject.next(updatedUser);
+      })
+    );
   }
 
   logout() {

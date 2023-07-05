@@ -66,7 +66,16 @@ router.put(
     const { id, name, email, address, phoneNumber } = req.body;
     console.log(id);
     try {
-      const user = await UserModel.findByIdAndUpdate(req.params.id);
+      const user = await UserModel.findByIdAndUpdate(
+        req.params.id,
+        {
+          name: name,
+          email: email,
+          address: address,
+          phoneNumber: phoneNumber,
+        },
+        { new: true }
+      ); // Return the updated user object);
 
       if (!user) {
         res.status(HTTP_BAD_REQUEST).send("User not found");
