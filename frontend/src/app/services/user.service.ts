@@ -3,7 +3,12 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/user';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
+import {
+  BASE_URL,
+  USER_LOGIN_URL,
+  USER_REGISTER_URL,
+  USER_UPDATE,
+} from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
 
@@ -60,6 +65,10 @@ export class UserService {
         },
       })
     );
+  }
+
+  updateUser(user: User): Observable<User> {
+    return this.http.put<User>(USER_UPDATE + user.id, user);
   }
 
   logout() {

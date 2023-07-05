@@ -80,6 +80,7 @@ import { CurrencyService } from './services/currency.service';
   providers: [
     { provide: OrderService },
     { provide: CurrencyService },
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

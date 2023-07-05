@@ -60,6 +60,26 @@ router.post(
   })
 );
 
+router.put(
+  "/update/:id",
+  asyncHandler(async (req, res) => {
+    const { id, name, email, address, phoneNumber } = req.body;
+    console.log(id);
+    try {
+      const user = await UserModel.findByIdAndUpdate(req.params.id);
+
+      if (!user) {
+        res.status(HTTP_BAD_REQUEST).send("User not found");
+        return;
+      }
+
+      res.send(generateTokenResponse(user));
+    } catch (error) {
+      res.status(HTTP_BAD_REQUEST).send("Failed to update user");
+    }
+  })
+);
+
 const generateTokenResponse = (user: any) => {
   const token = jwt.sign(
     {
