@@ -14,3 +14,9 @@ a {
   color: var(--links);
   font-family: "EB Garamond", serif;
 }
+
+@media screen and (max-width: 520px) {
+  div {
+    display: none;
+  }
+}
