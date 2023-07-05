@@ -4,7 +4,6 @@ import { User } from '../shared/models/user';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
 import { HttpClient } from '@angular/common/http';
 import {
-  BASE_URL,
   USER_LOGIN_URL,
   USER_REGISTER_URL,
   USER_UPDATE,

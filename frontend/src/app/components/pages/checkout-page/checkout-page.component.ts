@@ -8,7 +8,6 @@ import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/order';
 import { User } from 'src/app/shared/models/user';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
-import { InjectionToken } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-page',
