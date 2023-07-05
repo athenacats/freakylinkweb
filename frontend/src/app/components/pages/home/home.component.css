@@ -17,7 +17,6 @@ ul {
 }
 
 li a {
-  height: 34rem;
   width: 20rem;
   border: 1px solid var(--strong);
   border-radius: 1rem;
@@ -61,7 +60,7 @@ li a img {
   margin-top: 0.3rem;
   padding: 0.5rem 1rem;
   position: relative;
-  height: 100%;
+  height: 9rem;
 }
 
 .favorite {
@@ -78,10 +77,9 @@ li a img {
 .price {
   position: absolute;
   left: 0.9rem;
-
   margin-bottom: 0;
   align-self: baseline;
   justify-self: flex-end;
-  bottom: 1rem;
+
   font-family: "EB Garamond", serif;
 }
