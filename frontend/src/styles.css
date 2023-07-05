@@ -46,6 +46,7 @@ a {
   --tertiary: #ebc7eb;
   --strong: #4d0d4d;
   --brighterColor: rgb(250, 84, 244);
+  --dimmerBrighterColor: rgb(250, 84, 244, 0.8);
 }
 
 ::-webkit-scrollbar {

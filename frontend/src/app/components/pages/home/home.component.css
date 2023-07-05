@@ -13,6 +13,7 @@ ul {
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 li a {
@@ -38,15 +39,8 @@ div.name {
   font-size: 1.3rem;
 }
 
-.description span {
-  text-decoration: none;
-  color: var(--links);
-  font-size: 0.8rem;
-  padding: 0 0.2rem;
-}
-
-li a:visted {
-  color: var(--primary);
+li a:visited .name {
+  color: var(--dimmerBrighterColor);
 }
 
 li a:hover {
@@ -84,7 +78,7 @@ li a img {
 .price {
   position: absolute;
   left: 0.9rem;
-  margin-top: 0.7rem;
+
   margin-bottom: 0;
   align-self: baseline;
   justify-self: flex-end;

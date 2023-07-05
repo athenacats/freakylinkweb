@@ -18,13 +18,6 @@
           <ngb-rating [max]="5" [(rate)]="lingerie.stars" [readonly]="true">
           </ngb-rating>
         </div>
-        <div class="productItemFooter">
-          <div class="description">
-            <span>
-              {{ lingerie.description }}
-            </span>
-          </div>
-        </div>
         <div class="price">
           <span>
             {{ lingerie.price | currency : "Sh. " }}
