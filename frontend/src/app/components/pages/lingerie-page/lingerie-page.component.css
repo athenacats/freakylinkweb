@@ -108,3 +108,32 @@ button:hover {
   opacity: 0.9;
   cursor: pointer;
 }
+
+@media screen and (max-width: 610px) {
+  .container {
+    margin: 0;
+    padding: 1rem;
+  }
+  .container > * {
+    min-width: 18rem;
+    max-width: 23rem;
+  }
+  .header {
+    font-size: 1.3rem;
+  }
+  .description span {
+    font-size: 1rem;
+  }
+  ngb-rating {
+    font-size: 1rem;
+  }
+  .price {
+    font-size: 1.1rem;
+  }
+  button {
+    font-size: 1rem;
+  }
+  a {
+    padding: 0.1rem 0.5rem;
+  }
+}
