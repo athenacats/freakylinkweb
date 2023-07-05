@@ -24,3 +24,16 @@ a:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+
+@media screen and (max-width: 520px) {
+  div {
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1rem;
+
+    padding: 0.5rem 0.5rem;
+    margin: 0.5rem;
+  }
+}
