@@ -24,6 +24,12 @@ form {
   flex-direction: column;
 }
 
+.email {
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: var(--primary);
+}
+
 .map {
   display: flex;
   flex-direction: column;
