@@ -19,3 +19,9 @@ button:hover {
   opacity: 0.8;
   cursor: pointer;
 }
+
+@media screen and (max-width: 550px) {
+  button {
+    height: 3rem;
+  }
+}
