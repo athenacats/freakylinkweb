@@ -18,8 +18,11 @@ import {
   marker,
   tileLayer,
 } from 'leaflet';
+import * as L from 'leaflet';
+import 'leaflet-search';
+import { Order } from '../../../shared/models/order';
 import { LocationService } from 'src/app/services/location.service';
-import { Order } from 'src/app/shared/models/order';
+import { Control, LayerGroup } from 'leaflet';
 
 @Component({
   selector: 'map',
@@ -42,6 +45,8 @@ export class MapComponent implements OnChanges {
   private readonly DEFAULT_LATLNG: LatLngTuple = [1.29, 36.82];
   @ViewChild('map', { static: true })
   mapElement!: ElementRef;
+
+  private searchControl!: Control & any;
 
   map!: Map;
   currentMarker!: Marker;
@@ -73,15 +78,21 @@ export class MapComponent implements OnChanges {
 
   initializeMap() {
     if (this.map) return;
-    this.map = map(this.mapElement.nativeElement, {
+    this.map = L.map(this.mapElement.nativeElement, {
       attributionControl: false,
     }).setView(this.DEFAULT_LATLNG, 1);
 
-    tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
-    this.map.on('click', (e: LeafletMouseEvent) => {
-      this.setMarker(e.latlng);
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(this.map);
+    const searchLayer = new LayerGroup();
+    this.searchControl = new (L.Control as any).Search({
+      position: 'topright',
+      layer: searchLayer,
+      initial: false,
+      collapsed: false,
     });
+    this.searchControl.addTo(this.map);
   }
+
   findMyLocation() {
     this.locationService.getCurrentLocation().subscribe({
       next: (latLng) => {
