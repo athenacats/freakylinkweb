@@ -10,13 +10,10 @@ import {
   LatLng,
   LatLngExpression,
   LatLngTuple,
-  LeafletMouseEvent,
   Map,
   Marker,
   icon,
-  map,
   marker,
-  tileLayer,
 } from 'leaflet';
 import * as L from 'leaflet';
 import 'leaflet-search';
@@ -26,7 +23,6 @@ import { LayerGroup } from 'leaflet';
 import 'leaflet-control-geocoder';
 import 'leaflet';
 import Control from 'leaflet-control-geocoder';
-import Geocoder from 'leaflet-control-geocoder';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { EventEmitter, Output } from '@angular/core';
 import { CheckoutPageComponent } from '../../pages/checkout-page/checkout-page.component';
