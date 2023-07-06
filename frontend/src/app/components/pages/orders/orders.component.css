@@ -11,6 +11,7 @@
 }
 .summary {
   width: 100%;
+  overflow-x: auto;
 }
 
 table {
@@ -37,6 +38,9 @@ td {
   padding: 0.5rem;
   text-align: center;
   border-right: 1px solid var(--tertiary);
+
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Display ellipsis (...) for overflow */
 }
 
 th:last-child,
@@ -51,4 +55,29 @@ th:last-child,
 p {
   font-family: "EB Garamond", serif;
   color: var(--shadowSaturated);
+}
+
+p.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin-top: 0;
+  }
+  .content {
+    gap: 1rem;
+  }
+  thead.main {
+    font-size: 1.2rem;
+  }
+  .paymentId {
+    word-wrap: break-word;
+    width: 15% !important;
+  }
+  p.mobile {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -1,11 +1,12 @@
 <div class="container">
   <div class="content">
     <app-title title="Orders" fontSize="1.6rem"></app-title>
+    <p class="mobile">Swipe to see full table ➡️</p>
     <div class="summary">
       <table *ngIf="orders">
         <thead class="main">
           <tr>
-            <th>Payment ID</th>
+            <th class="paymentId">Payment ID</th>
             <th>Date</th>
             <th>Name</th>
             <th>Price</th>
@@ -18,7 +19,11 @@
         <tbody>
           <ng-container *ngFor="let order of orders">
             <tr *ngFor="let item of order.items; let firstItem = first">
-              <td *ngIf="firstItem" [attr.rowspan]="order.items.length">
+              <td
+                class="paymentId"
+                *ngIf="firstItem"
+                [attr.rowspan]="order.items.length"
+              >
                 {{ order.paymentId }}
               </td>
               <td *ngIf="firstItem" [attr.rowspan]="order.items.length">
