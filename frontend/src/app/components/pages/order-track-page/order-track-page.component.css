@@ -4,6 +4,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  padding-bottom: 1rem;
 }
 
 .content {
@@ -33,4 +34,16 @@ h1 {
 .details strong {
   display: inline-block;
   width: 40%;
+}
+
+@media screen and (max-width: 550px) {
+  h1 {
+    text-align: center;
+  }
+  .content {
+    gap: 1rem;
+  }
+  .details > div:first-child {
+    margin-top: 0;
+  }
 }
