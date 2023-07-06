@@ -31,3 +31,12 @@
 .summary h3 {
   margin: 0 1rem 0 0;
 }
+
+@media screen and (max-width: 550px) {
+  .content {
+    margin: auto;
+  }
+  .container {
+    margin: 0;
+  }
+}
