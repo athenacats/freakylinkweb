@@ -22,7 +22,11 @@ import * as L from 'leaflet';
 import 'leaflet-search';
 import { Order } from '../../../shared/models/order';
 import { LocationService } from 'src/app/services/location.service';
-import { Control, LayerGroup } from 'leaflet';
+import { LayerGroup } from 'leaflet';
+import 'leaflet-control-geocoder';
+import 'leaflet';
+import Control from 'leaflet-control-geocoder';
+import Geocoder from 'leaflet-control-geocoder';
 
 @Component({
   selector: 'map',
@@ -59,8 +63,10 @@ export class MapComponent implements OnChanges {
 
     if (this.readonly && this.addressLatLng) {
       this.showLocationOnReadonlyMode();
+      this.geocodeAddress(this.addressLatLng);
     }
   }
+
   showLocationOnReadonlyMode() {
     const m = this.map;
     this.setMarker(this.addressLatLng);
@@ -116,7 +122,25 @@ export class MapComponent implements OnChanges {
 
     this.currentMarker.on('dragend', () => {
       this.addressLatLng = this.currentMarker.getLatLng();
+      this.geocodeAddress(this.addressLatLng);
     });
+
+    this.geocodeAddress(latlng);
+  }
+
+  geocodeAddress(latlng: LatLngExpression) {
+    if (this.map.options.crs) {
+      (L.Control as any).Geocoder.nominatim().reverse(
+        latlng,
+        this.map.options.crs.scale(this.map.getZoom()),
+        (results: any) => {
+          if (results && results.length > 0) {
+            const placeName = results[0].name;
+            console.log('Place name:', placeName);
+          }
+        }
+      );
+    }
   }
 
   set addressLatLng(latlng: LatLng) {
