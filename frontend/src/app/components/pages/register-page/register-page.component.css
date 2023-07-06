@@ -27,3 +27,10 @@
 .login a:hover {
   opacity: 0.8;
 }
+@media screen and (max-width: 550px) {
+  .container {
+    margin-top: 0;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+}
