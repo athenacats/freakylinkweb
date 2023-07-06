@@ -41,6 +41,9 @@ map {
   width: 90%;
   height: 100%;
 }
+p {
+  color: var(--shadowSaturated);
+}
 
 .buttonsContainer {
   flex-basis: 100%;

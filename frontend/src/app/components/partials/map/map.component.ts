@@ -107,7 +107,7 @@ export class MapComponent implements OnChanges {
       initial: false,
       collapsed: false,
     });
-    this.searchControl.addTo(this.map);
+    this.map.addControl(this.searchControl);
   }
 
   findMyLocation() {

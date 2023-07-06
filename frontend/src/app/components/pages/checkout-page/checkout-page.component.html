@@ -29,6 +29,9 @@
     ></app-title>
     <map (addressUpdated)="updateAddress($event)" [order]="order"></map>
   </div>
+  <div class="instructions">
+    <p>Drag on the marker to select your address or click "Find My Location</p>
+  </div>
   <div class="buttonsContainer">
     <div class="buttons">
       <button (click)="createOrder()">Proceed to Payment</button>
