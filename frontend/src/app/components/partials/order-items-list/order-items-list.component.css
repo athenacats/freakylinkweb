@@ -33,3 +33,53 @@ img {
   object-fit: cover;
   border-radius: 100rem;
 }
+
+@media screen and (max-width: 550px) {
+  table {
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  tr {
+    width: 100%;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  td {
+    height: 3rem;
+    padding-left: 0.5rem;
+
+    font-size: 1.1rem;
+    border-right: 1px solid var(--shadowSaturated);
+    border-bottom: 1px solid var(--shadowSaturated);
+  }
+
+  .title {
+    border-right: none;
+    border-bottom: none;
+  }
+  .name {
+    width: 58%;
+  }
+  .quantity {
+    width: 2%;
+  }
+  .img {
+    width: 10%;
+  }
+  .price {
+    width: 15%;
+  }
+  .total {
+    width: 15%;
+    border-right: none;
+  }
+  .last {
+    border-bottom: none;
+  }
+  .last1 {
+    border-right: none;
+    border-bottom: none;
+  }
+}

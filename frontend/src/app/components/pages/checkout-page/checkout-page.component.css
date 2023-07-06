@@ -43,6 +43,7 @@ map {
 }
 p {
   color: var(--shadowSaturated);
+  text-align: center;
 }
 
 .buttonsContainer {
@@ -71,4 +72,33 @@ button {
 button:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+
+.leaflet-top.leaflet-right {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin-top: 0;
+  }
+  app-title {
+    margin: 0rem 0 0 0.2rem;
+  }
+  .content {
+    gap: 0.5rem;
+  }
+  text-input {
+    padding-left: 1rem;
+  }
+  .map {
+    gap: 1rem;
+  }
+  .buttons {
+    margin-top: 0.5rem;
+  }
+  button {
+    font-size: 1.1rem;
+    height: 2.5rem;
+  }
 }

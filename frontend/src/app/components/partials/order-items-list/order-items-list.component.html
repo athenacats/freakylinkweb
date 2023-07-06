@@ -1,34 +1,34 @@
 <table>
   <tr>
-    <td colspan="5">
+    <td class="title" colspan="5">
       <h3>Order Items:</h3>
     </td>
   </tr>
   <tr *ngFor="let item of order.items">
-    <td>
+    <td class="img">
       <a routerLink="/lingerie/{{ item.lingerie.id }}">
         <img [src]="item.lingerie.imageUrl" alt="{{ item.lingerie.name }}" />
       </a>
     </td>
-    <td>
+    <td class="name">
       {{ item.lingerie.name }}
     </td>
-    <td>
+    <td class="price">
       {{ item.lingerie.price | currency : "Sh. " }}
     </td>
-    <td>
+    <td class="quantity">
       {{ item.quantity }}
     </td>
-    <td>
+    <td class="total">
       {{ item.price | currency : "Sh. " }}
     </td>
   </tr>
-  <tr>
-    <td colspan="3"></td>
-    <td>
+  <tr class="last">
+    <td class="last" colspan="3"></td>
+    <td class="last">
       <strong>Total: </strong>
     </td>
-    <td>
+    <td class="last" class="last1">
       <strong>
         {{ order.totalPrice | currency : "Sh." }}
       </strong>
