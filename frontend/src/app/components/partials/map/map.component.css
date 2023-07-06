@@ -39,3 +39,14 @@
 .findLocation:hover {
   background-color: var(--shadowSaturated);
 }
+
+@media screen and (max-width: 550px) {
+  .findLocation {
+    position: absolute;
+    margin: auto;
+    width: 8rem;
+    right: 2rem;
+    min-height: 3rem;
+    font-size: 1.1rem;
+  }
+}
