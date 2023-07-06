@@ -27,6 +27,9 @@ import 'leaflet-control-geocoder';
 import 'leaflet';
 import Control from 'leaflet-control-geocoder';
 import Geocoder from 'leaflet-control-geocoder';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { EventEmitter, Output } from '@angular/core';
+import { CheckoutPageComponent } from '../../pages/checkout-page/checkout-page.component';
 
 @Component({
   selector: 'map',
@@ -38,6 +41,9 @@ export class MapComponent implements OnChanges {
   order!: Order;
   @Input()
   readonly = false;
+
+  @ViewChild(CheckoutPageComponent) checkoutPage!: CheckoutPageComponent;
+
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
@@ -54,8 +60,13 @@ export class MapComponent implements OnChanges {
 
   map!: Map;
   currentMarker!: Marker;
+  checkoutForm!: FormGroup;
+  @Output() addressUpdated: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private locationService: LocationService) {}
+  constructor(
+    private locationService: LocationService,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnChanges(): void {
     if (!this.order) return;
@@ -136,7 +147,8 @@ export class MapComponent implements OnChanges {
         (results: any) => {
           if (results && results.length > 0) {
             const placeName = results[0].name;
-            console.log('Place name:', placeName);
+            console.log(placeName);
+            this.addressUpdated.emit(placeName);
           }
         }
       );

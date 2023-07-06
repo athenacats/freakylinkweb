@@ -13,7 +13,11 @@
         [control]="fc['phoneNumber']"
         label="Phone Number"
       ></text-input>
-      <text-input [control]="fc['address']" label="Address"></text-input>
+      <text-input
+        [control]="fc['address']"
+        label="Address"
+        [value]="address"
+      ></text-input>
     </form>
     <order-items-list [order]="order"></order-items-list>
   </div>
@@ -23,7 +27,7 @@
       fontSize="1.6rem"
       width="80%"
     ></app-title>
-    <map [order]="order"></map>
+    <map (addressUpdated)="updateAddress($event)" [order]="order"></map>
   </div>
   <div class="buttonsContainer">
     <div class="buttons">

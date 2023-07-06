@@ -8,6 +8,8 @@ import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/order';
 import { User } from 'src/app/shared/models/user';
 import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
+import { ViewChild } from '@angular/core';
+import { MapComponent } from '../../partials/map/map.component';
 
 @Component({
   selector: 'app-checkout-page',
@@ -17,8 +19,11 @@ import { LOCAL_STORAGE, StorageService } from 'ngx-webstorage-service';
 export class CheckoutPageComponent implements OnInit {
   order: Order = new Order();
   user!: User;
+  @ViewChild(MapComponent) mapComponent!: MapComponent;
 
   checkoutForm!: FormGroup;
+  address = '';
+
   constructor(
     cartService: CartService,
     private formBuilder: FormBuilder,
@@ -44,6 +49,12 @@ export class CheckoutPageComponent implements OnInit {
   }
   get fc() {
     return this.checkoutForm.controls;
+  }
+
+  updateAddress(address: string) {
+    this.address = address;
+    console.log(address);
+    this.checkoutForm.get('address')?.setValue(address);
   }
 
   createOrder() {
