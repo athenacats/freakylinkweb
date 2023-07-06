@@ -9,7 +9,6 @@
 
 .content {
   width: 45rem;
-
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -77,4 +76,25 @@ button {
 button:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin-top: 0;
+  }
+  .content {
+    gap: 1rem;
+  }
+  app-title {
+    margin: 0;
+  }
+  .summary h3 {
+    font-size: 1.4rem;
+  }
+  .map {
+    gap: 1rem;
+  }
+  .summary span {
+    font-size: 1.1rem;
+  }
 }
