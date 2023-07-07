@@ -21,7 +21,7 @@ input {
 }
 
 ::placeholder {
-  color: var(--primary);
+  color: var(--links);
 }
 
 div button {

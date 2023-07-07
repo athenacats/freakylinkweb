@@ -28,8 +28,8 @@ img {
   border-radius: 3rem;
   border: 1px solid var(--strong);
   padding: 1rem;
-  background-color: var(--secondary);
-  box-shadow: 10px 8px 16px var(--shadowSaturated);
+  background-color: var(--lingerieTabs);
+  box-shadow: 10px 8px 16px var(--lingerieTabs);
   color: var(--brighterColor);
 }
 
@@ -55,7 +55,7 @@ img {
 
 .description span {
   text-decoration: none;
-  color: var(--links);
+  color: var(--brighterColor);
   font-size: 1.1rem;
   padding: 0 0.2rem;
 }
@@ -73,7 +73,7 @@ a {
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 500;
-  color: var(--shadowSaturated);
+  color: var(--lingerieTabs);
   font-family: "EB Garamond", serif;
 }
 
@@ -95,7 +95,7 @@ ngb-rating {
 
 button {
   background-color: var(--brighterColor);
-  color: var(--shadowSaturated);
+  color: var(--lingerieTabs);
   border: none;
   border-radius: 10rem;
 

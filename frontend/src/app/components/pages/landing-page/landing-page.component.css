@@ -20,7 +20,7 @@ body {
 .introduction {
   display: flex;
   flex-direction: column;
-  background-color: #1f1a1f;
+  background-color: var(--secondary);
   margin: 0;
   width: 100vw;
 }
@@ -140,7 +140,7 @@ a {
 }
 
 h2 {
-  color: var(--shadowSaturated);
+  color: var(--links);
 }
 
 .quote {

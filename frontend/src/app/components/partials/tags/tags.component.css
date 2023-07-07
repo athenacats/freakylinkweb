@@ -6,12 +6,12 @@ div {
 }
 
 a {
-  background-color: var(--shadowSaturated);
+  background-color: var(--lingerieTabs);
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 500;
-  color: var(--links);
+  color: var(--brighterColor);
   font-family: "EB Garamond", serif;
 }
 

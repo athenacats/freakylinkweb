@@ -51,8 +51,9 @@ body.lightTheme {
   --shadowSaturatedTransparent: rgb(255, 205, 253, 0.8);
   --tertiary: #4d0d4d;
   --strong: #ebc7eb;
-  --brighterColor: rgb(250, 84, 244);
-  --dimmerBrighterColor: rgb(250, 84, 244, 0.8);
+  --brighterColor: rgb(36, 6, 36);
+  --dimmerBrighterColor: rgb(36, 6, 36, 0.8);
+  --lingerieTabs: rgb(250, 84, 244);
 }
 
 body {
@@ -62,6 +63,7 @@ body {
   --text: white;
   --shadow: #0a080a;
   --shadowSaturated: rgb(36, 6, 36);
+  --lingerieTabs: rgb(36, 6, 36);
   --shadowSaturatedTransparent: rgb(36, 6, 36, 0.8);
   --tertiary: #ebc7eb;
   --strong: #4d0d4d;

@@ -27,8 +27,8 @@ li a {
   overflow: hidden;
   color: var(--brighterColor);
   text-decoration: none;
-  background-color: var(--secondary);
-  box-shadow: 10px 8px 16px var(--shadowSaturated);
+  background-color: var(--lingerieTabs);
+  box-shadow: 10px 8px 16px var(--lingerieTabs);
 }
 
 div.name {
