@@ -35,7 +35,6 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 import { OrderService } from './services/order.service';
 import { CurrencyService } from './services/currency.service';
-import { FooterComponent } from './components/partials/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +63,6 @@ import { FooterComponent } from './components/partials/footer/footer.component';
     LandingPageComponent,
     ProfileComponent,
     OrdersComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
