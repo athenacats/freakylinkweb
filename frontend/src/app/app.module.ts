@@ -35,6 +35,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
 import { OrderService } from './services/order.service';
 import { CurrencyService } from './services/currency.service';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { CurrencyService } from './services/currency.service';
     LandingPageComponent,
     ProfileComponent,
     OrdersComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

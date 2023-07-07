@@ -86,6 +86,9 @@ a span {
   display: none;
 }
 
+.menu.open {
+  display: block;
+}
 .menuContainer:hover .menu {
   display: block;
 }

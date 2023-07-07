@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/user';
@@ -11,7 +12,12 @@ import { User } from 'src/app/shared/models/user';
 export class HeaderComponent {
   cartQuantity = 0;
   user!: User;
-  constructor(cartService: CartService, private userService: UserService) {
+  isMenuOpen = false;
+  constructor(
+    cartService: CartService,
+    private router: Router,
+    private userService: UserService
+  ) {
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
     });
@@ -23,7 +29,16 @@ export class HeaderComponent {
     this.userService.logout();
   }
 
+  preventNavigation(event: Event): void {
+    event.preventDefault(); // Prevent the default navigation behavior
+    this.router.navigateByUrl('#');
+  }
+
   get isAuth() {
     return this.user.token;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 }
