@@ -17,7 +17,7 @@ ul {
   list-style: none;
   margin: 0.5rem;
   padding: 0;
-  background-color: var(--shadowSaturated);
+  background-color: var(--lingerieTabs);
 }
 
 ul li {
@@ -66,7 +66,7 @@ li select {
   font-size: 1.1rem;
   font-weight: 100;
   background-color: var(--links);
-  color: var(--shadowSaturated);
+  color: var(--lingerieTabs);
   cursor: pointer;
 }
 
@@ -74,7 +74,7 @@ li .removeButton {
   border-radius: 1rem;
   border: none;
   padding: 0.5rem;
-  color: var(--shadowSaturated);
+  color: var(--lingerieTabs);
   background-color: var(--links);
   outline: none;
 }
@@ -95,7 +95,7 @@ li .removeButton:hover {
   padding: 0.5rem;
   margin: 0.5rem;
   font-family: "EB Garamond", serif;
-  background-color: var(--tertiary);
+  background-color: var(--links);
   align-self: center;
   flex: 1 3;
 }
@@ -113,6 +113,11 @@ li .removeButton:hover {
 
 .lingerieCount {
   margin-bottom: 1.5rem;
+  color: var(--strong);
+}
+
+.totalPrice {
+  color: var(--strong);
 }
 
 .lingerieCount::before {

@@ -42,7 +42,7 @@ a {
 }
 
 body.lightTheme {
-  --primary: #ffffff;
+  --primary: #fce5fc;
   --secondary: #ffcdfd;
   --links: rgb(36, 6, 36);
   --text: rgb(0, 0, 0);
