@@ -12,7 +12,6 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
 import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
 import { OrdersComponent } from './components/pages/orders/orders.component';
-import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -23,7 +22,7 @@ const routes: Routes = [
   { path: 'lingerie/:id', component: LingeriePageComponent },
   { path: 'cart-page', component: CartPageComponent },
   { path: 'login', component: LoginPageComponent },
-  { path: 'dashboard', component: DashboardComponent },
+
   { path: 'register', component: RegisterPageComponent },
   {
     path: 'checkout',

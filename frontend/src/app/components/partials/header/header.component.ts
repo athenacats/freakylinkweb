@@ -29,11 +29,6 @@ export class HeaderComponent {
     this.userService.logout();
   }
 
-  preventNavigation(event: Event): void {
-    event.preventDefault(); // Prevent the default navigation behavior
-    this.router.navigateByUrl('#');
-  }
-
   get isAuth() {
     return this.user.token;
   }

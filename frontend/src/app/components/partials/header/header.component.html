@@ -16,9 +16,7 @@
           <a routerLink="/login">Login</a>
         </li>
         <li *ngIf="isAuth" class="menuContainer">
-          <a routerLink="/dashboard" (click)="preventNavigation($event)">{{
-            user.name
-          }}</a>
+          <a>{{ user.name }}</a>
           <div class="menu" [class.open]="isMenuOpen">
             <a routerLink="/profile" (click)="closeMenu()">Profile</a>
             <a routerLink="/orders" (click)="closeMenu()">Orders</a>

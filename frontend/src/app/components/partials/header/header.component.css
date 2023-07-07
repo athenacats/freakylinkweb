@@ -20,6 +20,10 @@ img:hover {
   cursor: pointer;
 }
 
+li.menuContainer A {
+  color: var(--links);
+}
+
 a {
   color: var(--links);
   align-self: center;
