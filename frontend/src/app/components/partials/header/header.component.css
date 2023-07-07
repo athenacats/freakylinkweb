@@ -123,6 +123,29 @@ a span {
   width: 60%;
 }
 
+.themeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: var(--secondary);
+  outline: none;
+  border: none;
+  align-self: center;
+}
+
+svg {
+  height: 1rem;
+  cursor: pointer;
+  justify-self: self-start;
+}
+
+svg path {
+  fill: var(--links);
+}
+
 @media screen and (max-width: 770px) {
   img {
     width: 4rem;

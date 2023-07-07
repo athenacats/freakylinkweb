@@ -41,7 +41,21 @@ a {
   text-decoration: none;
 }
 
-:root {
+body.lightTheme {
+  --primary: #ffffff;
+  --secondary: #ffcdfd;
+  --links: rgb(36, 6, 36);
+  --text: rgb(0, 0, 0);
+  --shadow: #0a080a;
+  --shadowSaturated: rgb(255, 205, 253);
+  --shadowSaturatedTransparent: rgb(255, 205, 253, 0.8);
+  --tertiary: #4d0d4d;
+  --strong: #ebc7eb;
+  --brighterColor: rgb(250, 84, 244);
+  --dimmerBrighterColor: rgb(250, 84, 244, 0.8);
+}
+
+body {
   --primary: #6e5d6e;
   --secondary: #1f1a1f;
   --links: #ffcdfd;

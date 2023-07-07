@@ -49,4 +49,8 @@ export class HeaderComponent implements OnInit {
       this.isMenuOpen = false;
     }
   }
+
+  toggleLightTheme(): void {
+    document.body.classList.toggle('lightTheme');
+  }
 }
