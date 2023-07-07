@@ -1,13 +1,15 @@
 .container {
   height: 100%;
-  margin-top: 1rem;
+  padding-top: 1rem;
   width: 100vw;
+  padding-bottom: 2rem;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 .summary {
   width: 100%;

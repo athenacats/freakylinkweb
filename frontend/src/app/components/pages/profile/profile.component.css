@@ -18,7 +18,7 @@
 .summary > div {
   display: flex;
   margin-top: 0.7rem;
-  align-items: flex-end;
+  align-items: flex-start;
   color: var(--shadowSaturated);
 }
 

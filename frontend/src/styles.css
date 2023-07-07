@@ -15,10 +15,16 @@ html {
 }
 
 html,
-body {
+body,
+app-root {
   width: 100%;
   overflow-x: hidden;
-  height: 100vh;
+  height: 100%;
+}
+
+body {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 html,
