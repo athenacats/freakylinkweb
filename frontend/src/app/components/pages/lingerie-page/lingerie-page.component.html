@@ -1,5 +1,5 @@
 <app-not-found
-  [visible]="!lingerie"
+  [visible]="!lingerie || !isLoadingComponentPresent()"
   resetLinkText="Back To Homepage"
   notFoundMessage="Lingerie Not Found"
 >

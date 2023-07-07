@@ -1,7 +1,7 @@
 <app-search></app-search>
 <app-tags></app-tags>
 <app-not-found
-  [visible]="!lingeries || !lingeries.length"
+  [visible]="!lingeries || !lingeries.length || !isLoadingComponentPresent()"
   resetLinkText="Reset Search"
 >
 </app-not-found>

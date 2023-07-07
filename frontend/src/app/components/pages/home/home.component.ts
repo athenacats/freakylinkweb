@@ -32,4 +32,9 @@ export class HomeComponent {
       });
     });
   }
+  isLoadingComponentPresent(): boolean {
+    // Logic to determine if app-loading component is present
+    const appLoadingComponent = document.querySelector('app-loading');
+    return !!appLoadingComponent; // Return true if the component is present, false otherwise
+  }
 }
