@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
+/* eslint-disable @typescript-eslint/no-empty-function */
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { UserService } from 'src/app/services/user.service';
@@ -9,10 +11,17 @@ import { User } from 'src/app/shared/models/user';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   cartQuantity = 0;
   user!: User;
   isMenuOpen = false;
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    if (window.innerWidth > 770) {
+      this.isMenuOpen = false;
+    }
+  }
   constructor(
     cartService: CartService,
     private router: Router,
@@ -25,6 +34,8 @@ export class HeaderComponent {
       this.user = newUser;
     });
   }
+
+  ngOnInit(): void {}
   logout() {
     this.userService.logout();
   }
@@ -34,6 +45,8 @@ export class HeaderComponent {
   }
 
   closeMenu(): void {
-    this.isMenuOpen = false;
+    if (window.innerWidth <= 770) {
+      this.isMenuOpen = false;
+    }
   }
 }

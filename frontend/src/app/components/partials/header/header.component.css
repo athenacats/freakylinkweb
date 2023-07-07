@@ -20,8 +20,14 @@ img:hover {
   cursor: pointer;
 }
 
-li.menuContainer A {
+li.menuContainer a {
   color: var(--links);
+}
+
+li.menuContainer a:hover {
+  background: var(--tertiary);
+  color: var(--secondary);
+  cursor: pointer;
 }
 
 a {

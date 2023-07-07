@@ -17,10 +17,10 @@
         </li>
         <li *ngIf="isAuth" class="menuContainer">
           <a>{{ user.name }}</a>
-          <div class="menu" [class.open]="isMenuOpen">
+          <div class="menu">
             <a routerLink="/profile" (click)="closeMenu()">Profile</a>
             <a routerLink="/orders" (click)="closeMenu()">Orders</a>
-            <a (click)="logout()" (click)="closeMenu()">Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li class="cart">
