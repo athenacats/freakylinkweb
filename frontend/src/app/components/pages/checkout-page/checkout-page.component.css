@@ -42,7 +42,7 @@ map {
   height: 100%;
 }
 p {
-  color: var(--shadowSaturated);
+  color: var(--text);
   text-align: center;
 }
 

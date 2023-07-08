@@ -18,8 +18,8 @@
   display: flex;
   margin-top: 0.7rem;
   align-items: flex-end;
-  color: var(--shadowSaturated);
-  border-bottom: 1px solid var(--strong);
+  color: var(--links);
+  border-bottom: 1px solid var(--brighterColor);
 }
 
 .summary span {
@@ -59,6 +59,12 @@ map {
 .buttons {
   margin: 2rem;
   width: 80%;
+}
+
+.summary {
+  background-color: var(--shadowSaturated);
+  padding: 1rem;
+  border-radius: 2rem;
 }
 
 button {
