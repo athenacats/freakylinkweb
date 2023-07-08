@@ -3,7 +3,9 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  height: 100%;
 }
 
 .container > * {
@@ -28,9 +30,9 @@ img {
   border-radius: 3rem;
   border: 1px solid var(--strong);
   padding: 1rem;
-  background-color: var(--lingerieTabs);
-  box-shadow: 10px 8px 16px var(--lingerieTabs);
-  color: var(--brighterColor);
+  background-color: var(--shadowSaturated);
+  box-shadow: 10px 8px 16px var(--shadowSaturated);
+  color: var(--links);
 }
 
 .header {
@@ -42,7 +44,7 @@ img {
 }
 
 .name {
-  color: var(--brighterColor);
+  color: var(--links);
 }
 
 .favorite {
@@ -55,7 +57,7 @@ img {
 
 .description span {
   text-decoration: none;
-  color: var(--brighterColor);
+  color: var(--links);
   font-size: 1.1rem;
   padding: 0 0.2rem;
 }
@@ -68,18 +70,18 @@ img {
 }
 
 a {
-  background-color: var(--brighterColor);
+  background-color: var(--links);
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 500;
-  color: var(--lingerieTabs);
+  color: var(--shadowSaturated);
   font-family: "EB Garamond", serif;
 }
 
 ngb-rating {
   font-size: 1.1rem;
-  color: var(--brighterColor);
+  color: var(--links);
   margin-bottom: 0.2rem;
 }
 
@@ -90,12 +92,12 @@ ngb-rating {
 
 .price::before {
   content: "Price:";
-  color: var(--brighterColor);
+  color: var(--links);
 }
 
 button {
-  background-color: var(--brighterColor);
-  color: var(--lingerieTabs);
+  background-color: var(--links);
+  color: var(--shadowSaturated);
   border: none;
   border-radius: 10rem;
 

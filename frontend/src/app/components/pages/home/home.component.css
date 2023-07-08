@@ -2,7 +2,7 @@
 
 ngb-rating {
   font-size: 1rem;
-  color: var(--brighterColor);
+  color: var(--links);
   margin-bottom: 0.2rem;
 }
 
@@ -25,15 +25,15 @@ li a {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: var(--brighterColor);
+  color: var(--links);
   text-decoration: none;
-  background-color: var(--lingerieTabs);
-  box-shadow: 10px 8px 16px var(--lingerieTabs);
+  background-color: var(--shadowSaturated);
+  box-shadow: 10px 8px 16px var(--shadowSaturated);
 }
 
 div.name {
   text-decoration: none;
-  color: var(--brighterColor);
+  color: var(--links);
   width: 90%;
   font-family: "Dancing Script", cursive;
   font-size: 1.3rem;

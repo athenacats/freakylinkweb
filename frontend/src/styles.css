@@ -15,8 +15,7 @@ html {
 }
 
 html,
-body,
-app-root {
+body {
   width: 100%;
   overflow-x: hidden;
   height: 100%;
@@ -59,7 +58,7 @@ body.lightTheme {
 body {
   --primary: #6e5d6e;
   --secondary: #1f1a1f;
-  --links: #ffcdfd;
+  --links: rgb(255, 205, 253);
   --text: white;
   --shadow: #0a080a;
   --shadowSaturated: rgb(36, 6, 36);
@@ -68,7 +67,7 @@ body {
   --tertiary: #ebc7eb;
   --strong: #4d0d4d;
   --brighterColor: rgb(250, 84, 244);
-  --dimmerBrighterColor: rgb(250, 84, 244, 0.8);
+  --dimmerBrighterColor: rgb(255, 204, 253, 0.8);
 }
 
 ::-webkit-scrollbar {
