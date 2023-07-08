@@ -6,6 +6,7 @@
   justify-content: center;
   font-family: "EB Garamond", serif;
   width: 100%;
+  height: 100%;
 }
 
 .content {
@@ -17,15 +18,22 @@
 
 .summary > div {
   display: flex;
-  margin-top: 0.7rem;
+  padding-top: 0.7rem;
   align-items: flex-start;
-  color: var(--shadowSaturated);
+  color: var(--links);
 }
 
 .summary span {
   font-size: 1.2rem;
   align-items: flex-end;
   justify-content: center;
+}
+
+.summary {
+  background-color: var(--shadowSaturated);
+  padding: 0 1rem 1rem 1rem;
+  margin-top: 1rem;
+  border: 1px solid var(--brighterColor);
 }
 
 .summary h3 {
