@@ -55,7 +55,22 @@ body.lightTheme {
   --lingerieTabs: rgb(250, 84, 244);
 }
 
-body {
+.dark-theme {
+  --primary: #6e5d6e;
+  --secondary: #1f1a1f;
+  --links: rgb(255, 205, 253);
+  --text: white;
+  --shadow: #0a080a;
+  --shadowSaturated: rgb(36, 6, 36);
+  --lingerieTabs: rgb(36, 6, 36);
+  --shadowSaturatedTransparent: rgb(36, 6, 36, 0.8);
+  --tertiary: #ebc7eb;
+  --strong: #4d0d4d;
+  --brighterColor: rgb(250, 84, 244);
+  --dimmerBrighterColor: rgb(255, 204, 253, 0.8);
+}
+
+:root {
   --primary: #6e5d6e;
   --secondary: #1f1a1f;
   --links: rgb(255, 205, 253);

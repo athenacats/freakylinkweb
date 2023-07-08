@@ -3,6 +3,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { ThemeService } from 'src/app/services/theme.service';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/shared/models/user';
 
@@ -25,7 +26,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     cartService: CartService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private themeService: ThemeService
   ) {
     cartService.getCartObservable().subscribe((newCart) => {
       this.cartQuantity = newCart.totalCount;
@@ -35,7 +37,13 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userThemePreference = this.themeService.getThemePreference();
+
+    if (userThemePreference === 'light') {
+      document.body.classList.add('lightTheme');
+    }
+  }
   logout() {
     this.userService.logout();
   }
@@ -51,6 +59,6 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleLightTheme(): void {
-    document.body.classList.toggle('lightTheme');
+    this.themeService.toggleTheme();
   }
 }
