@@ -7,6 +7,11 @@
   padding-bottom: 2rem;
 }
 
+.details {
+  background-color: var(--shadowSaturated);
+  border: 1px solid var(--brighterColor);
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -16,14 +21,17 @@
 }
 
 h1 {
-  color: var(--strong);
+  color: var(--links);
   font-family: "Dancing Script", cursive;
+  background-color: var(--shadowSaturated);
+  padding: 1rem;
+  border-bottom: 1px solid var(--brighterColor);
 }
 
 .details > div {
-  color: var(--shadowSaturated);
+  color: var(--links);
   font-family: "EB Garamond", serif;
-  margin: 1rem;
+  padding: 1rem;
   font-size: 1.1rem;
 }
 
