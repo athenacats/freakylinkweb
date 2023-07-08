@@ -5,7 +5,8 @@
   flex-wrap: wrap;
   padding-top: 3rem;
   padding-bottom: 2rem;
-  height: 100%;
+  width: 100vw;
+  margin: 0;
 }
 
 .container > * {
@@ -18,7 +19,7 @@ img {
   flex: 1 0;
   object-fit: cover;
   height: 35rem;
-  margin: 1rem;
+  padding: 1rem;
 }
 
 .details {
@@ -111,10 +112,9 @@ button:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 520px) {
   .container {
-    margin: 0;
-    padding: 1rem;
+    margin-right: 0;
   }
   .container > * {
     min-width: 18rem;
