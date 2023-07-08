@@ -20,6 +20,7 @@ table {
   background-color: var(--strong);
   width: 100%;
   border-collapse: collapse;
+  cursor: move;
 }
 
 thead.main {

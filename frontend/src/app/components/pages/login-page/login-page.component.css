@@ -22,11 +22,11 @@ form {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  color: var(--shadowSaturated);
+  color: var(--brighterColor);
 }
 
 .register a {
-  color: var(--brighterColor);
+  color: var(--links);
   opacity: 1;
 }
 
