@@ -26,7 +26,7 @@
 
 ## Introduction
 
-This is a [full stack MEAN ecommerce website](https://thefreakylink.onrender.com/) that I created for my existing lingerie & adult toy business. AS of the time of writing this, I am yet to make it open to customers to place orders, but it already has some products uploaded and users can register and place orders using a Paypal Sandbox account. All functionalities have been implemented so once ready, I shall transfer it to my existing domain [thefreakylink](https://thefreakylink.com/) and pay for higher database storage.
+This is a [full stack MEAN ecommerce website](https://thefreakylink.onrender.com/) that I created for my existing lingerie & adult toy business. As of the time of writing this, I am yet to make it open to customers to place orders, but it already has some products uploaded and users can register and place orders using a Paypal Sandbox account. All functionalities have been implemented so once ready, I shall transfer it to my existing domain [thefreakylink](https://thefreakylink.com/) and pay for higher database storage.
 
 To see the website in action, [click here](https://thefreakylink.onrender.com/).
 
