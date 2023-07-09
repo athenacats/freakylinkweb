@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "build": "npm install --legacy-peer-deps && ng build --configuration production",
     "lint": "ng lint"
   },
   "private": true,
@@ -32,7 +30,22 @@
     "ngx-webstorage-service": "5.0.0",
     "rxjs": "~7.8.1",
     "tslib": "^2.6.0",
-    "zone.js": "~0.13.1"
+    "zone.js": "~0.13.1",
+    "@angular-devkit/build-angular": "^16.1.4",
+    "@angular-eslint/builder": "16.0.3",
+    "@angular-eslint/eslint-plugin": "16.0.3",
+    "@angular-eslint/eslint-plugin-template": "16.0.3",
+    "@angular-eslint/schematics": "16.0.3",
+    "@angular-eslint/template-parser": "16.0.3",
+    "@angular/cli": "^16.1.4",
+    "@angular/compiler-cli": "^16.1.4",
+    "@types/jasmine": "~4.3.5",
+    "@types/leaflet": "1.9.3",
+    "@typescript-eslint/eslint-plugin": "5.61.0",
+    "@typescript-eslint/parser": "5.61.0",
+    "eslint": "^8.44.0",
+    "jasmine-core": "~5.0.1",
+    "typescript": "~5.1.6"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.4",
