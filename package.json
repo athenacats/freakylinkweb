@@ -1,6 +1,9 @@
 {
   "name": "freakylinkweb",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=18 <19"
+  },
   "description": "",
   "scripts": {
     "start": "cd backend/built && node server.js",
