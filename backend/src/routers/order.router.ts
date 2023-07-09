@@ -9,6 +9,15 @@ import auth from "../middlewares/auth.mid";
 const router = Router();
 router.use(auth);
 
+router.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 router.post(
   "/create",
   asyncHandler(async (req: any, res: any) => {

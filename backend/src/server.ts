@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:4200" || "https://thefreakylink.onrender.com"],
+    origin: ["http://localhost:4200"],
   })
 );
 
