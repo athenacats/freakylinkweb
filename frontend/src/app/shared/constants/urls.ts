@@ -1,4 +1,6 @@
-export const BASE_URL = 'http://localhost:5000';
+import { environment } from 'src/environments/environment';
+
+export const BASE_URL = environment.production ? '' : 'http://localhost:5000';
 
 export const LINGERIES_URL = BASE_URL + '/api/lingeries';
 export const LINGERIES_TAGS_URL = LINGERIES_URL + '/tags';
