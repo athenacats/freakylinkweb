@@ -1,6 +1,6 @@
 # The Freaky Link MEAN E-Commerce Website
 
-[![Most Used Language](https://img.shields.io/github/languages/top/athenacats/todo-list?style=for-the-badge)](https://github.com/athenacats/freakylinkweb)
+[![Most Used Language](https://img.shields.io/github/languages/top/athenacats/soma?style=for-the-badge)](https://github.com/athenacats/freakylinkweb)
 [![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)]
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)]
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)]
